@@ -107,9 +107,9 @@ theme: butterfly
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
   # - type: git
-    # repo: https://gitee.com/ytanck/hexo-blog.git
-    # branch: master
+  #   repo: https://gitee.com/ytanck/hexo-blog.git
+  #   branch: master
   - type: git
     repo: https://github.com/ytking/hexo-blog
-    branch: gh-pages
+    branch: master
 
