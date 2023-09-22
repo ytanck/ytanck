@@ -1,0 +1,374 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Java类加载机制 | YT'S BLOG</title><meta name="author" content="YT Anck"><meta name="copyright" content="YT Anck"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="谈谈 Java 类加载机制最近在学习 Tomcat 架构，其中很重要的一个模块是类加载器，因为以前学习的不够深入，所以趁这个机会好好把类加载机制搞明白。    谈谈 Java 类加载机制 Overview API for class loading java.lang.ClassLoader java.security.SecureClassLoader java.net.URLClassLoad">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java类加载机制">
+<meta property="og:url" content="https://ytanck.gitee.io/hexo-blog/post/%E8%B0%88%E8%B0%88Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/index.html">
+<meta property="og:site_name" content="YT&#39;S BLOG">
+<meta property="og:description" content="谈谈 Java 类加载机制最近在学习 Tomcat 架构，其中很重要的一个模块是类加载器，因为以前学习的不够深入，所以趁这个机会好好把类加载机制搞明白。    谈谈 Java 类加载机制 Overview API for class loading java.lang.ClassLoader java.security.SecureClassLoader java.net.URLClassLoad">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xiaojinhe-cdn.iyoudui.cn/upload/common/202394/avatar.jpg">
+<meta property="article:published_time" content="2023-08-31T08:03:48.000Z">
+<meta property="article:modified_time" content="2023-09-22T05:53:51.836Z">
+<meta property="article:author" content="YT Anck">
+<meta property="article:tag" content="Java">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xiaojinhe-cdn.iyoudui.cn/upload/common/202394/avatar.jpg"><link rel="shortcut icon" href="/hexo-blog/img/favicon.png"><link rel="canonical" href="https://ytanck.gitee.io/hexo-blog/post/%E8%B0%88%E8%B0%88Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/hexo-blog/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/hexo-blog/',
+  algolia: undefined,
+  localSearch: {"path":"/hexo-blog/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Java类加载机制',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-09-22 13:53:51'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://xiaojinhe-cdn.iyoudui.cn/upload/common/202394/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/hexo-blog/archives/"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/hexo-blog/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/hexo-blog/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/hexo-blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexo-blog/images/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/hexo-blog/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/hexo-blog/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/hexo-blog/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://xiaojinhe-cdn.iyoudui.cn/upload/common/202398/w-ban.jpg')"><nav id="nav"><span id="blog-info"><a href="/hexo-blog/" title="YT'S BLOG"><img class="site-icon" src="https://xiaojinhe-cdn.iyoudui.cn/upload/common/2023/avata.jpg"/><span class="site-name">YT'S BLOG</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/hexo-blog/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/hexo-blog/images/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/hexo-blog/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/hexo-blog/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/hexo-blog/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/hexo-blog/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Java类加载机制</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-31T08:03:48.000Z" title="发表于 2023-08-31 16:03:48">2023-08-31</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-09-22T05:53:51.836Z" title="更新于 2023-09-22 13:53:51">2023-09-22</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/hexo-blog/categories/Java/">Java</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.8k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Java类加载机制"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/hexo-blog/post/%E8%B0%88%E8%B0%88Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="谈谈-Java-类加载机制"><a href="#谈谈-Java-类加载机制" class="headerlink" title="谈谈 Java 类加载机制"></a>谈谈 Java 类加载机制</h1><p>最近在学习 Tomcat 架构，其中很重要的一个模块是类加载器，因为以前学习的不够深入，所以趁这个机会好好把类加载机制搞明白。</p>
+<!-- TOC -->
+
+<ul>
+<li><a href="#%E8%B0%88%E8%B0%88-java-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6">谈谈 Java 类加载机制</a><ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="#api-for-class-loading">API for class loading</a><ul>
+<li><a href="#javalangclassloader"><code>java.lang.ClassLoader</code></a></li>
+<li><a href="#javasecuritysecureclassloader"><code>java.security.SecureClassLoader</code></a></li>
+<li><a href="#javaneturlclassloader"><code>java.net.URLClassLoader</code></a></li>
+</ul>
+</li>
+<li><a href="#tomcat-8515-class-loading-mechanism">Tomcat 8.5.15 class loading Mechanism</a></li>
+<li><a href="#reference">Reference</a></li>
+</ul>
+</li>
+</ul>
+<!-- /TOC -->
+
+<hr>
+<h2 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h2><p><img src="/hexo-blog/../res/Class-loader.png"></p>
+<p>类加载器主要分为两类，一类是 JDK 默认提供的，一类是用户自定义的。<br>JDK 默认提供三种类加载器</p>
+<ol>
+<li><code>Bootstrap ClassLoader</code>，启动类加载器，每次执行 <code>java</code> 命令时都会使用该加载器为虚拟机加载核心类。该加载器是由 <code>native code</code> 实现，而不是 Java 代码，加载类的路径为 <code>&lt;JAVA_HOME&gt;/jre/lib</code>。特别的 <code>&lt;JAVA_HOME&gt;/jre/lib/rt.jar</code> 中包含了 <code>sun.misc.Launcher</code> 类， 而 <code>sun.misc.Launcher$ExtClassLoader</code> 和 <code>sun.misc.Launcher$AppClassLoader</code> 都是 <code>sun.misc.Launcher</code> 的内部类，所以拓展类加载器和系统类加载器都是由启动类加载器加载的。</li>
+<li><code>Extension ClassLoader</code>, 拓展类加载器，用于加载拓展库中的类。拓展库路径为 <code>&lt;JAVA_HOME&gt;/jre/lib/ext/</code>。实现类为 <code>sun.misc.Launcher$ExtClassLoader</code></li>
+<li><code>System ClassLoader</code>, 系统类加载器。用于加载 CLASSPATH 中的类。实现类为 <code>sun.misc.Launcher$AppClassLoader</code></li>
+</ol>
+<p>用户自定义的类加载器</p>
+<ol>
+<li><code>Custom ClassLoader</code>, 一般都是 <code>java.lang.ClassLoder</code> 的子类</li>
+</ol>
+<p>正统的类加载机制是基于双亲委派的，也就是当调用类加载器加载类时，首先将加载任务委派给双亲，若双亲无法加载成功时，自己才进行类加载。</p>
+<p>在实例化一个新的类加载器时，我们可以为其指定一个 <code>parent</code>，即双亲，若未显式指定，则 <code>System ClassLoader</code> 就作为默认双亲。</p>
+<p>具体的说，类加载任务是由 <code>ClassLoader</code> 的 <code>loadClass()</code> 方法来执行的，他会按照以下顺序加载类：</p>
+<ol>
+<li>通过 <code>findLoadedClass()</code> 看该类是否已经被加载。该方法为 native code 实现，若已加载则返回。</li>
+<li>若未加载则委派给双亲，<code>parent.loadClass()</code>，若成功则返回</li>
+<li>若未成功，则调用 <code>findClass()</code> 方法加载类。<code>java.lang.ClassLoader</code> 中该方法只是简单的抛出一个 <code>ClassNotFoundException</code> 所以，自定义的 ClassLoader 都需要 Override <code>findClass()</code> 方法</li>
+</ol>
+<h2 id="API-for-class-loading"><a href="#API-for-class-loading" class="headerlink" title="API for class loading"></a>API for class loading</h2><h3 id="java-lang-ClassLoader"><a href="#java-lang-ClassLoader" class="headerlink" title="java.lang.ClassLoader"></a><code>java.lang.ClassLoader</code></h3><ul>
+<li><code>ClassLoader</code> 是一个抽象类。</li>
+<li>待加载的类必须用 <code>The Java™ Language Specification</code> 定义的全类名，全类名的定义请查阅 <a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/specs/jls/se8/html/jls-13.html#jls-13.1">The Form of a Binary</a>。</li>
+<li>给定一个全类名，类加载器应该去定位该类所在的位置。通用的策略是将全类名转换为类文件路径，然后通过类文件路径在文件系统中定位。</li>
+<li>每一个加载到内存的类都由一个 Class 对象来表示，每一个 Class 对象都有一个指向加载该类的类加载器的引用。但是数组的 Class 对象是由 Java 运行时环境创建的，通过 <code>Class.getClassLoader()</code> 方法返回的是数组元素的类加载器，若数组元素是基本类型，则返回 <code>null</code>，若类是由 <code>Bootstrap ClassLoader</code> 加载的话也是返回 <code>null</code>  <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="comment">// Object 类在 &lt;java_home&gt;/jre/lib/rt.jar 中，</span></span><br><span class="line">        <span class="comment">// 由 Bootstrap ClassLoader 加载，由于该类加载器是由 native code 编写</span></span><br><span class="line">        <span class="comment">// 所以输出为 null</span></span><br><span class="line">        Object[] objects = <span class="keyword">new</span> <span class="title class_">Object</span>[<span class="number">5</span>];</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(objects.getClass().getClassLoader());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// ZipFileAttributes 类在 &lt;java_home&gt;/jre/lib/ext/zipfs.jar 中，</span></span><br><span class="line">        <span class="comment">// 由 Extension ClassLoader 加载，</span></span><br><span class="line">        <span class="comment">// 输出为  sun.misc.Launcher$ExtClassLoader@4b67cf4d</span></span><br><span class="line">        ZipFileAttributes[] attributes = <span class="keyword">new</span> <span class="title class_">ZipFileAttributes</span>[<span class="number">5</span>];</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(attributes.getClass().getClassLoader());</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Main 类是自定义的类，</span></span><br><span class="line">        <span class="comment">// 默认由 System ClassLoader 加载，</span></span><br><span class="line">        <span class="comment">// 输出为 sun.misc.Launcher$AppClassLoader@18b4aac2</span></span><br><span class="line">        Main[] array = <span class="keyword">new</span> <span class="title class_">Main</span>[<span class="number">5</span>];</span><br><span class="line">        array[<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">Main</span>();</span><br><span class="line">        System.out.println();</span><br><span class="line">        System.out.println(array.getClass().getClassLoader());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><code>ClassLoader</code> 默认支持并行加载，但是其子类必须调用 <code>ClassLoader.registerAsParallelCapable()</code> 来启用并行加载</li>
+<li>一般来说,JVM 从本地文件系统加载类的行为是与平台有关的。</li>
+<li><code>defineClass()</code> 方法可以将字节流转换成一个 <code>Class</code> 对象。然后调用 <code>Class.newInstance()</code> 来创建类的实例</li>
+</ul>
+<h3 id="java-security-SecureClassLoader"><a href="#java-security-SecureClassLoader" class="headerlink" title="java.security.SecureClassLoader"></a><code>java.security.SecureClassLoader</code></h3><p>增加了一层权限验证，因为关注点不在安全，所以暂不讨论。</p>
+<h3 id="java-net-URLClassLoader"><a href="#java-net-URLClassLoader" class="headerlink" title="java.net.URLClassLoader"></a><code>java.net.URLClassLoader</code></h3><p>该类加载器用来加载 URL 指定的 JAR 文件或目录中的类和资源，以 <code>/</code> 结尾的 URL 认为是目录，否则认为是 JAR 文件。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 尝试通过 URLClassLoader 来加载桌面下的 Test 类。</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">Main</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            URL[] urls = <span class="keyword">new</span> <span class="title class_">URL</span>[<span class="number">1</span>];</span><br><span class="line">            <span class="type">URLStreamHandler</span> <span class="variable">streamHandler</span> <span class="operator">=</span> <span class="literal">null</span>;</span><br><span class="line">            <span class="type">File</span> <span class="variable">classPath</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">File</span>(<span class="string">&quot;/home/chen/Desktop/&quot;</span>);</span><br><span class="line">            <span class="type">String</span> <span class="variable">repository</span> <span class="operator">=</span> (<span class="keyword">new</span> <span class="title class_">URL</span>(<span class="string">&quot;file&quot;</span>, <span class="literal">null</span>,</span><br><span class="line">                    classPath.getCanonicalPath() + File.separator))</span><br><span class="line">                    .toString();</span><br><span class="line">            urls[<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">URL</span>(<span class="literal">null</span>, repository, streamHandler);</span><br><span class="line"></span><br><span class="line">            <span class="type">ClassLoader</span> <span class="variable">loader</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">URLClassLoader</span>(urls);</span><br><span class="line"></span><br><span class="line">            <span class="type">Class</span> <span class="variable">testClass</span> <span class="operator">=</span> loader.loadClass(<span class="string">&quot;Test&quot;</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">// output:  java.net.URLClassLoader@7f31245a</span></span><br><span class="line">            System.out.println(testClass.getClassLoader());</span><br><span class="line">        &#125; <span class="keyword">catch</span> (MalformedURLException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (ClassNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Tomcat-8-5-15-class-loading-Mechanism"><a href="#Tomcat-8-5-15-class-loading-Mechanism" class="headerlink" title="Tomcat 8.5.15 class loading Mechanism"></a>Tomcat 8.5.15 class loading Mechanism</h2><p><img src="/hexo-blog/../res/tomcat-classloader.png"></p>
+<p>Tomcat 使用正统的类加载机制(双亲委派),但部分地方做了改动。</p>
+<ul>
+<li><p><code>Bootstrap classLoader</code> 和 <code>Extension classLoader</code> 的作用不变</p>
+</li>
+<li><p><code>System classLoader</code> 正常情况下加载的是 <code>CLASSPATH</code> 下的类，但是 Tomcat 的启动脚本并未使用该变量，而是从以下仓库下加载类：</p>
+<ol>
+<li><code>$CATALINA_HOME/bin/bootstrap.jar</code> 包含了 Tomcat 的启动类。在该启动类中创建了 <code>Common classLoader</code>、<code>Catalina classLoader</code>、<code>shared classLoader</code>。因为 <code>$CATALINA_BASE/conf/catalina.properties</code> 中只对 <code>common.loader</code> 属性做了定义，<code>server.loader</code> 和 <code>shared.loader</code> 属性为空，所以默认情况下，这三个 classLoader 都是 <code>CommonLoader</code>。具体的代码逻辑可以查阅 <code>org.apache.catalina.startup.Bootstrap</code> 类的 <code>initClassLoaders()</code> 方法和 <code>createClassLoader()</code> 方法。</li>
+<li><code>$CATALINA_BASE/bin/tomcat-juli.jar</code> 包含了 Tomcat 日志模块所需要的实现类</li>
+<li><code>$CATALINA_HOME/bin/commons-daemon.jar</code></li>
+</ol>
+</li>
+<li><p><code>Common classLoader</code> 是位于 Tomcat 应用服务器顶层的公用类加载器。由其加载的类可以由 Tomcat 自身类和所有应用程序使用。扫描路径由 <code>$CATALINA_BASE/conf/catalina.properties</code> 文件中的 <code>common.loader</code> 属性定义。默认是 <code>$CATALINA_HOME/lib</code>.</p>
+</li>
+<li><p><code>catalina classLoader</code> 用于加载服务器内部可见类，这些类应用程序不能访问。</p>
+</li>
+<li><p><code>shared classLoader</code> 用于加载应用程序共享类，这些类服务器不会依赖。</p>
+</li>
+<li><p><code>Webapp classLoader</code> 。每个应用程序都会有一个独一无二的 <code>webapp classloader</code>，他用来加载本应用程序 <code>/WEB-INF/classes</code> 和 <code>/WEB-INF/lib</code> 下的类。</p>
+</li>
+</ul>
+<p>特别的：</p>
+<p><code>Webapp classLoader</code> 的默认行为会与正常的双亲委派模式不同：</p>
+<ol>
+<li>从 <code>Bootstrap classloader</code> 加载</li>
+<li>若没有，从 <code>/WEB-INF/classes</code> 加载</li>
+<li>若没有，从 <code>/WEB-INF/lib/*.jar</code> 加载</li>
+<li>若没有，则依次从 <code>System</code>、<code>Common</code>、<code>shared</code> 加载（该步骤使用双亲委派）</li>
+</ol>
+<p>当然了，我们也可以通过配置来使 <code>Webapp classLoader</code> 严格按照双亲委派模式加载类：</p>
+<ol>
+<li>通过在工程的 <code>META-INF/context.xml</code>（和 <code>WEB-INF/classes</code> 在同一目录下） 配置文件中添加 <code>&lt;Loader delegate=&quot;true&quot;/&gt;</code></li>
+<li>因为 <code>Webapp classLoader</code> 的实现类是 <code>org.apache.catalina.loader.WebappLoader</code>，他有一个属性叫 <code>delegate</code>， 用来控制类加载器的加载行为，默认为 <code>false</code>，我们可以使用 <code>set</code> 方法，将其设为 <code>true</code> 来启用严格双亲委派加载模式。</li>
+</ol>
+<p>严格双亲委派模式加载步骤：</p>
+<ol>
+<li>从 <code>Bootstrap classloader</code> 加载</li>
+<li>若没有，则依次从 <code>System</code>、<code>Common</code>、<code>shared</code> 加载</li>
+<li>若没有，从 <code>/WEB-INF/classes</code> 加载</li>
+<li>若没有，从 <code>/WEB-INF/lib/*.jar</code> 加载</li>
+</ol>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><ol>
+<li><a target="_blank" rel="noopener" href="https://docs.oracle.com/javase/tutorial/ext/basics/load.html">The Java Class Loading Mechanism</a></li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Java_Classloader">Java Classloader</a></li>
+<li><a target="_blank" rel="noopener" href="https://tomcat.apache.org/tomcat-8.5-doc/class-loader-howto.html">Class Loader HOW-TO - Apache Tomcat 8</a></li>
+<li><a href="">《Tomcat 架构解析》</a></li>
+<li><a href="">《深入理解 Java 虚拟机》</a></li>
+</ol>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://ytanck.gitee.io/hexo-blog">YT Anck</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://ytanck.gitee.io/hexo-blog/post/%E8%B0%88%E8%B0%88Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/">https://ytanck.gitee.io/hexo-blog/post/%E8%B0%88%E8%B0%88Java%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ytanck.gitee.io/hexo-blog" target="_blank">YT'S BLOG</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/hexo-blog/tags/Java/">Java</a></div><div class="post_share"><div class="social-share" data-image="https://xiaojinhe-cdn.iyoudui.cn/upload/common/202394/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/hexo-blog/post/all/" title="小案例"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">小案例</div></div></a></div><div class="next-post pull-right"><a href="/hexo-blog/post/%E9%A1%B9%E7%9B%AE%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E6%96%B9%E6%A1%88/" title="项目性能优化方案"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">项目性能优化方案</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/hexo-blog/post/Spring-SpringMVC-Mybatis%E6%95%B4%E5%90%88/" title="Spring-SpringMVC-Mybatis整合"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-01</div><div class="title">Spring-SpringMVC-Mybatis整合</div></div></a></div><div><a href="/hexo-blog/post/%E8%B0%88%E8%B0%88Tomcat%E6%9E%B6%E6%9E%84%E5%8F%8A%E5%90%AF%E5%8A%A8%E8%BF%87%E7%A8%8B/" title="谈谈Tomcat请求处理流程"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-08-31</div><div class="title">谈谈Tomcat请求处理流程</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Gitalk</span><span id="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://xiaojinhe-cdn.iyoudui.cn/upload/common/202394/avatar.jpg" onerror="this.onerror=null;this.src='/hexo-blog/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">YT Anck</div><div class="author-info__description">share & study</div></div><div class="card-info-data site-data is-center"><a href="/hexo-blog/archives/"><div class="headline">文章</div><div class="length-num">21</div></a><a href="/hexo-blog/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/hexo-blog/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ytking"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ytking" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:yt_anck@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">=>优秀的CV大师</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B0%88%E8%B0%88-Java-%E7%B1%BB%E5%8A%A0%E8%BD%BD%E6%9C%BA%E5%88%B6"><span class="toc-number">1.</span> <span class="toc-text">谈谈 Java 类加载机制</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Overview"><span class="toc-number">1.1.</span> <span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#API-for-class-loading"><span class="toc-number">1.2.</span> <span class="toc-text">API for class loading</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#java-lang-ClassLoader"><span class="toc-number">1.2.1.</span> <span class="toc-text">java.lang.ClassLoader</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java-security-SecureClassLoader"><span class="toc-number">1.2.2.</span> <span class="toc-text">java.security.SecureClassLoader</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#java-net-URLClassLoader"><span class="toc-number">1.2.3.</span> <span class="toc-text">java.net.URLClassLoader</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Tomcat-8-5-15-class-loading-Mechanism"><span class="toc-number">1.3.</span> <span class="toc-text">Tomcat 8.5.15 class loading Mechanism</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-number">1.4.</span> <span class="toc-text">Reference</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexo-blog/post/Alipay-JSAPI/" title="H5 调用支付宝小程序 Alipay JSAPI">H5 调用支付宝小程序 Alipay JSAPI</a><time datetime="2023-09-22T06:49:16.000Z" title="发表于 2023-09-22 14:49:16">2023-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexo-blog/post/image-event%E5%8A%A0%E8%BD%BD%E5%85%9C%E5%BA%95%E5%9B%BE%E7%89%87/" title="图片加载不出来，使用默认图片的三种方法">图片加载不出来，使用默认图片的三种方法</a><time datetime="2023-09-22T06:47:30.000Z" title="发表于 2023-09-22 14:47:30">2023-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexo-blog/post/js%E5%80%92%E8%AE%A1%E6%97%B6/" title="js倒计时">js倒计时</a><time datetime="2023-09-22T06:44:39.000Z" title="发表于 2023-09-22 14:44:39">2023-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexo-blog/post/window-event/" title="js window 页面事件">js window 页面事件</a><time datetime="2023-09-22T06:36:33.000Z" title="发表于 2023-09-22 14:36:33">2023-09-22</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/hexo-blog/post/%E4%BD%BF%E7%94%A8CSS%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%92%8C%E9%A5%BC%E5%9B%BE/" title="使用CSS实现进度条和饼图">使用CSS实现进度条和饼图</a><time datetime="2023-09-11T01:43:54.639Z" title="发表于 2023-09-11 09:43:54">2023-09-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By YT Anck</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/hexo-blog/js/utils.js"></script><script src="/hexo-blog/js/main.js"></script><script src="/hexo-blog/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: 'e5fde9e84af78984af83',
+      clientSecret: '23ad48374fb53e6f19262198d22aae81a2d3a57d',
+      repo: 'https://github.com/ytking/comments.git',
+      owner: 'ytking',
+      admin: ['ytking'],
+      id: 'dcff7114f956effa5a2ae29534194a89',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'rfVTHuaTwCchs7C1ynGxONxe-MdYXbMMI',
+      appKey: '6eL0qcaHZILsr1iOXbH0NuBj',
+      avatar: '',
+      serverURLs: 'https://rfvthuat.api.lncldglobal.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Gitalk' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script>(() => {
+  const isChatBtn = true
+  const isChatHideShow = false
+
+  if (isChatBtn) {
+    const close = () => {
+      Chatra('minimizeWidget')
+      Chatra('hide')
+    }
+
+    const open = () => {
+      Chatra('openChat', true)
+      Chatra('show')
+    }
+
+    window.ChatraSetup = {
+      startHidden: true
+    }
+  
+    window.chatBtnFn = () => {
+      const isShow = document.getElementById('chatra').classList.contains('chatra--expanded')
+      isShow ? close() : open()
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        Chatra('hide')
+      },
+      show: () => {
+        Chatra('show')
+      }
+    }
+  }
+
+  (function(d, w, c) {
+    w.ChatraID = 'PhLXQufxgCL6iLDEc'
+    var s = d.createElement('script')
+    w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments)
+    }
+    s.async = true
+    s.src = 'https://call.chatra.io/chatra.js'
+    if (d.head) d.head.appendChild(s)
+  })(document, window, 'Chatra')
+
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/hexo-blog/js/search/local-search.js"></script></div></div></body></html>
