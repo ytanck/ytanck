@@ -111,5 +111,5 @@ deploy:
   #   branch: master
   - type: git
     repo: https://github.com/ytking/hexo-blog
-    branch: master
+    branch: gh-pages
 
