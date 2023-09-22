@@ -1,0 +1,115 @@
+#recent-posts
+  & > .recent-post-item:not(:first-child)
+    margin-top: 20px
+
+  & > .recent-post-item
+    @extend .cardHover
+    display: flex
+    flex-direction: row
+    align-items: center
+    overflow: hidden
+    height: 16.8em
+
+    +maxWidth768()
+      flex-direction: column
+      height: auto
+
+    &:hover
+      img.post-bg
+        transform: scale(1.1)
+
+    &.ads-wrap
+      display: block !important
+      height: auto !important
+
+    .post_cover
+      overflow: hidden
+      width: 42%
+      height: 100%
+
+      +maxWidth768()
+        width: 100%
+        height: 230px
+
+      .post-bg
+        @extend .imgHover
+
+      &.right
+        order: 1
+
+        +maxWidth768()
+          order: 0
+
+    & >.recent-post-info
+      padding: 0 40px
+      width: 58%
+
+      +maxWidth768()
+        padding: 20px 20px 30px
+        width: 100%
+
+      &.no-cover
+        width: 100%
+
+        +maxWidth768()
+          padding: 30px 20px
+
+      & > .article-title
+        @extend .limit-more-line
+        color: var(--text-highlight-color)
+        font-size: 1.55em
+        line-height: 1.4
+        transition: all .2s ease-in-out
+        -webkit-line-clamp: 2
+
+        .sticky
+          margin-right: 10px
+          color: $sticky-color
+          transform: rotate(45deg)
+
+        +maxWidth768()
+          font-size: 1.43em
+
+        &:hover
+          color: $text-hover
+
+      & > .article-meta-wrap
+        margin: 6px 0
+        color: $theme-meta-color
+        font-size: .9em
+
+        & > .post-meta-date
+          cursor: default
+
+        i
+          margin: 0 4px 0 0
+
+        .fa-spinner
+          margin: 0
+
+        .article-meta-label
+          if hexo-config('post_meta.page.label')
+            padding-right: 4px
+          else
+            display: none
+
+        .article-meta-separator
+          margin: 0 6px
+
+        .article-meta-link
+          margin: 0 4px
+
+        if hexo-config('post_meta.page.date_format') == 'relative'
+          time
+            display: none
+
+        a
+          color: $theme-meta-color
+
+          &:hover
+            color: $text-hover
+            text-decoration: underline
+
+      & > .content
+        @extend .limit-more-line
+        -webkit-line-clamp: 2

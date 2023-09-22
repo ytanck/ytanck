@@ -1,0 +1,52 @@
+- const { server, site, option } = theme.artalk
+- const { use, lazyload } = theme.comments
+
+script.
+  (() => {
+    const initArtalk = () => {
+      window.artalkItem = new Artalk(Object.assign({
+        el: '#artalk-wrap',
+        server: '!{server}',
+        site: '!{site}',
+        pageKey: location.pathname,
+        darkMode: document.documentElement.getAttribute('data-theme') === 'dark',
+        countEl: '.artalk-count'
+      },!{JSON.stringify(option)}))
+
+      if (GLOBAL_CONFIG.lightbox === 'null') return
+      window.artalkItem.use(ctx => {
+        ctx.on('list-loaded', () => {
+          ctx.getCommentList().forEach(comment => {
+            const $content = comment.getRender().$content
+            btf.loadLightbox($content.querySelectorAll('img:not([atk-emoticon])'))
+          })
+        })
+      })
+    }
+
+    const loadArtalk = async () => {
+      if (typeof window.artalkItem === 'object') initArtalk()
+      else {
+        await getCSS('!{theme.asset.artalk_css}')
+        await getScript('!{theme.asset.artalk_js}')
+        initArtalk()
+      }
+    }
+
+    const artalkChangeMode = theme => {
+      const artalkWrap = document.getElementById('artalk-wrap')
+      if (!(artalkWrap && artalkWrap.children.length)) return
+      const isDark = theme === 'dark'
+      window.artalkItem.setDarkMode(isDark)
+    }
+  
+
+    btf.addGlobalFn('themeChange', artalkChangeMode, 'artalk')
+    
+    if ('!{use[0]}' === 'Artalk' || !!{lazyload}) {
+      if (!{lazyload}) btf.loadComment(document.getElementById('artalk-wrap'), loadArtalk)
+      else loadArtalk()
+    } else {
+      window.loadOtherComment = loadArtalk
+    }
+  })()
