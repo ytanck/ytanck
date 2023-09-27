@@ -1,6 +1,6 @@
 ---
 title: ES6来简化代码,你都用过哪些
-date: {{date}}
+date: 2023-01-01 10:15:20
 categories: 
  - [前端]
 tags: [JavaScript,ES6, 面试]

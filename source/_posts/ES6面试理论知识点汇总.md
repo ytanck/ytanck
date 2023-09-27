@@ -1,6 +1,6 @@
 ---
 title: ES6面试理论知识点汇总
-date: {{date}}
+date: 2023-01-01 10:15:20
 categories: 
  - [前端]
 tags: [JavaScript,ES6, 面试]

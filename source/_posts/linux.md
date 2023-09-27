@@ -1,6 +1,6 @@
 ---
 title: 一份前端够用的 Linux 命令
-date: {{date}}
+date: 2023-01-01 10:15:20
 categories: 
  - [Linux]
 tags: [Linux]
