@@ -1,14 +1,39 @@
-## 基础命令
+<img align="right" src="https://github-readme-stats.vercel.app/api?username=ytking&show_icons=true">
+
+### Hi there 👋
+- 🤝 很高兴you can关注我
+- 🤣 一个优秀的CV大师
+- 👀 这几年没在搞前端
+- 🌈 平时有空就写点[博客](http://www.yyff.wang/)
 
 
-```
-hexo new [layout] <title>
-```
-新建一篇文章,如果没有设置 layout 的话，默认使用 _config.yml 中的 default_layout 参数代替。
+
+### Code with
+![html](https://img.shields.io/badge/html-red
+)
+![js](https://img.shields.io/badge/JavaScript-yellow
+)
+![nodejs](https://img.shields.io/badge/node-orange
+)
+![vue](https://img.shields.io/badge/vue-%2342b883
+)
+![react](https://img.shields.io/badge/react-%23087EA4
+)
 
 
-新建目录/页面，默认情况下，Hexo 会使用文章的标题来决定文章文件的路径。对于独立页面来说，Hexo 会创建一个以标题为名字的目录，并在目录中放置一个 index.md 文件。你可以使用 --path 参数来覆盖上述行为、自行决定文件的目录：
-```
-hexo new page --path about/me "About me"
-```
-以上命令会创建一个 source/about/me.md 文件，同时 Front Matter 中的 title 为 "About me"
+
+
+<!--
+**ytking** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
+
+Here are some ideas to get you started:
+
+- 🔭 I’m currently working on ...
+- 🌱 I’m currently learning ...
+- 👯 I’m looking to collaborate on ...
+- 🤔 I’m looking for help with ...
+- 💬 Ask me about ...
+- 📫 How to reach me: ...
+- 😄 Pronouns: ...
+- ⚡ Fun fact: ...
+-->
