@@ -1,8 +1,26 @@
 .DS_Store
-Thumbs.db
-db.json
-*.log
-node_modules/
-public/
+node_modules
+/dist
 .deploy*/
 _multiconfig.yml
+db.json
+
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
