@@ -11,12 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Sync to Gitee
-        uses: wearerequired/git-mirror-action@master
-        env:
-          # 在 Settings->Secrets 配置 GITEE_PRIVATE_KEY
-          SSH_PRIVATE_KEY: ${{ secrets.GITEE_PRIVATE_KEY }}
+        uses: Yikun/hub-mirror-action@master
         with:
-          # GitHub 源仓库地址
-          source-repo: git@github.com:ytking/ytking.git
-          # Gitee 目标仓库地址
-          destination-repo: git@gitee.com:ytanck/ytanck.git
+          # 必选，需要同步的Github用户（源）
+          src: 'github/ytking'
+          # 必选，需要同步到的Gitee的用户（目的）
+          dst: 'gitee/ytanck'
+          # 必选，Gitee公钥对应的私钥
+          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+          # 必选，Gitee对应的用于创建仓库的token
+          dst_token:  ${{ secrets.GITEE_TOKEN }}
+          # static_list: "learn-typescript"
+          force_update: true
+        debug: true
