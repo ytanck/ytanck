@@ -23,5 +23,13 @@ jobs:
           dst_token:  ${{ secrets.GITEE_TOKEN }}
           # static_list 仓库名称 单一仓库同步
           static_list: "ytking"
+          # 如果是组织，指定组织即可，默认为用户user
+          # account_type: org
+          # 还有黑、白名单，静态名单机制，可以用于更新某些指定库
+          # static_list: repo_name
+          # black_list: 'repo_name,repo_name2'
+          # white_list: 'repo_name,repo_name2'
+          # force_update 表示启用 git push -f 强制同步
           force_update: true
+          # debug 为 true 表示启用 debug 开关，会显示所有执行命令
           debug: true
