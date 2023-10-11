@@ -1,7 +1,9 @@
-version: 2
-updates:
-- package-ecosystem: npm
-  directory: "/"
-  schedule:
-    interval: daily
-  open-pull-requests-limit: 20
+# 弃用自动更新依赖
+
+# version: 2
+# updates:
+# - package-ecosystem: npm
+#   directory: "/"
+#   schedule:
+#     interval: daily
+#   open-pull-requests-limit: 20
