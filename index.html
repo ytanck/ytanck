@@ -1,0 +1,368 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>YT'S BLOG - 个人博客</title><meta name="author" content="YT Anck"><meta name="copyright" content="YT Anck"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="share &amp; study">
+<meta property="og:type" content="website">
+<meta property="og:title" content="YT&#39;S BLOG">
+<meta property="og:url" content="https://ytking.github.io/test/index.html">
+<meta property="og:site_name" content="YT&#39;S BLOG">
+<meta property="og:description" content="share &amp; study">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xiaojinhe-cdn.iyoudui.cn/upload/common/202394/avatar.jpg">
+<meta property="article:author" content="YT Anck">
+<meta property="article:tag" content="Hexo Blog">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xiaojinhe-cdn.iyoudui.cn/upload/common/202394/avatar.jpg"><link rel="shortcut icon" href="/test/img/favicon.png"><link rel="canonical" href="https://ytking.github.io/test/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/test/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/test/',
+  algolia: undefined,
+  localSearch: {"path":"/test/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'YT\'S BLOG',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2023-10-16 13:38:05'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://xiaojinhe-cdn.iyoudui.cn/upload/common/202394/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/test/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/test/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/test/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/test/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/test/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/test/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/test/images/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/test/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/test/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/test/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/test/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header" style="background-image: url('https://xiaojinhe-cdn.iyoudui.cn/upload/common/202396/a1.png')"><nav id="nav"><span id="blog-info"><a href="/test/" title="YT'S BLOG"><img class="site-icon" src="https://xiaojinhe-cdn.iyoudui.cn/upload/common/2023/avata.jpg"/><span class="site-name">YT'S BLOG</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/test/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/test/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/test/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/test/images/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/test/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/test/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/test/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/test/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">YT'S BLOG</h1><div id="site-subtitle"><span id="subtitle"></span></div><div id="site_social_icons"><a class="social-icon" href="https://github.com/ytking" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:yt_anck@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/test/post/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%9B%E7%A8%8B-%E4%BB%80%E4%B9%88%E7%9A%84%E7%BA%BF%E7%A8%8B/" title="什么是进程?什么的线程?">什么是进程?什么的线程?</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-10-13T08:02:47.000Z" title="发表于 2023-10-13 16:02:47">2023-10-13</time></span></div><div class="content">进程操作系统中最核心的概念就是进程，进程是对正在运行中的程序的一个抽象，是系统进行资源分配和调度的基本单位
+操作系统的其他所有内容都是围绕着进程展开的，负责执行这些任务的是 CPU
+进程是一种抽象的概念，从来没有统一的标准定义看，一般由程序、数据集合和进程控制块三部分组成：
+
+程序用于描述进程要完成的功能，是控制进程执行的指令集
+
+数据集合是程序在执行时所需要的数据和工作区
+
+程序控制块，包含进程的描述信息和控制信息，是进程存在的唯一标志
+
+
+线程线程（thread）是操作系统能够进行运算调度的最小单位，其是进程中的一个执行任务（控制单元），负责当前进程中程序的执行
+一个进程至少有一个线程，一个进程可以运行多个线程，这些线程共享同一块内存，线程之间可以共享对象、资源，如果有冲突或需要协同，还可以随时沟通以解决冲突或保持同步
+举个例子，假设你经营着一家物业管理公司。最初，业务量很小，事事都需要你亲力亲为。给老张家修完暖气管道，立马再去老李家换电灯泡—这叫单线程，所有的工作都得顺序执行
+后来业务拓展了，你雇佣了几个工人，这样，你的物业公司就可以同时为多户人家提供服务了—这叫多线程，你是主线 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/test/post/JS%E6%95%B0%E5%AD%97%E7%B2%BE%E5%BA%A6%E4%B8%A2%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/" title="JS数字精度丢失的问题">JS数字精度丢失的问题</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-10-08T06:37:32.000Z" title="发表于 2023-10-08 14:37:32">2023-10-08</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/test/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">一、场景复现一个经典的面试题
+10.1 + 0.2 === 0.3 // false
+
+为什么是false呢?
+先看下面这个比喻
+比如一个数 1÷3&#x3D;0.33333333……
+3会一直无限循环，数学可以表示，但是计算机要存储，方便下次取出来再使用，但0.333333…… 这个数无限循环，再大的内存它也存不下，所以不能存储一个相对于数学来说的值，只能存储一个近似值，当计算机存储后再取出时就会出现精度丢失问题
+二、浮点数“浮点数”是一种表示数字的标准，整数也可以用浮点数的格式来存储
+我们也可以理解成，浮点数就是小数
+在JavaScript中，现在主流的数值类型是Number，而Number采用的是IEEE754规范中64位双精度浮点数编码
+这样的存储结构优点是可以归一化处理整数和小数，节省存储空间
+对于一个整数，可以很轻易转化成十进制或者二进制。但是对于一个浮点数来说，因为小数点的存在，小数点的位置不是固定的。解决思路就是使用科学计数法，这样小数点位置就固定了
+而计算机只能用二进制（0或1）表示，二进制转换为科学记数法的公式如下：
+其中，a的值为0或者1，e为小数点移动的位置
+举 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/test/post/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-10-08T06:31:56.432Z" title="发表于 2023-10-08 14:31:56">2023-10-08</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
+
+More info: Writing
+Run server1$ hexo server
+
+More info: Server
+Generate static files1$ hexo generate
+
+More info: Generating
+Deploy to remote sites1$ hexo deploy
+
+More info: Deployment
+</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/test/post/vue%E6%96%87%E6%9C%AC%E7%A9%BA%E6%A0%BC%E5%8D%A0%E4%BD%8D%E7%AC%A6/" title="vue里面的文本空格占位符">vue里面的文本空格占位符</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-28T08:45:16.000Z" title="发表于 2023-09-28 16:45:16">2023-09-28</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/test/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">vue里面的文本空格占位符下面是几个普通html常用字符：
+123456&amp;nbsp;  空格&amp;amp;   &amp;&amp;lt;    &lt;&amp;gt;    &gt;&amp;quot;   &quot;
+
+vue中空格表示：
+
+三种空格unicode(\u00A0,\u0020,\u3000)表示的区别
+1.不间断空格\u00A0,主要用在office中,让一个单词在结尾处不会换行显示,快捷键ctrl+shift+space ;
+2.半角空格(英文符号)\u0020,代码中常用的;
+3.全角空格(中文符号)\u3000,中文文章中使用;
+————————————————
+1&lt;button&gt;测评报&#123;&#123; &quot;\xa0&quot; &#125;&#125;名费&#123;&#123;&quot;\xa0\xa0\xa0\xa0\xa0\xa0\xa0&quot;&#125;&#125; &lt;/button&gt;
+
+转自：https://blog.csdn.net/weixin_50367873/article/d ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/test/post/Vue%E5%92%8CReact%E7%9A%84%E5%8C%BA%E5%88%AB/" title="Vue 和 React 的区别">Vue 和 React 的区别</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-27T05:26:18.000Z" title="发表于 2023-09-27 13:26:18">2023-09-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/test/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">Vue 和 React 的区别看这里
+简单说说 Vue 和 React 的区别青铜级只要真正了解一些，或者用过两个框架开发，就一定能说上来的一些语法层面：
+
+Vue API 多，React API 少
+Vue 双向绑定，修改数据自动更新视图，而 React 单向数据流，需要手动 setState
+Vue template 结构表现分离，React 用 jsx 结构表现融合，html&#x2F;css都可以写到js里
+都可以通过 props 进行父子组件数据传递，只是 Vue props 要声明，React 不用声明可能直接使用
+Vue 可以用插槽，React 是万物皆可 props
+Vue2 利用基本都是 Mixin，React 可以用高阶函数、自定义 hook 实现
+Vue 的 frgments、hook 到 Vue3 才有，Vue 还有丰富的指令，过滤器
+
+都支持服务端渲染，都有虚拟 DOM，数据驱动，组件化开发，响应式，组件通信，生命周期，Diff，都有状态管理 Vuex&#x2F;Pinia、Redux&#x2F;Mobx，等等等等….
+白银级1、可以加一些偏感受方面的，比如： ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/test/post/Proxy%E5%8F%8A%E5%85%B6%E4%BC%98%E7%82%B9/" title="什么是 Proxy">什么是 Proxy</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-27T04:22:15.000Z" title="发表于 2023-09-27 12:22:15">2023-09-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/test/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">什么是 Proxy通常，当谈到JavaScript语言时，我们讨论的是ES6标准提供的新特性，本文也不例外。 我们将讨论JavaScript代理以及它们的作用，但在我们深入研究之前，我们先来看一下Proxy的定义是什么。
+MDN上的定义是：代理对象是用于定义基本操作的自定义行为（例如，属性查找，赋值，枚举，函数调用等）。
+换句话说，我们可以说代理对象是我们的目标对象的包装器，我们可以在其中操纵其属性并阻止对它的直接访问。 你可能会发现将它们应用到实际代码中很困难，我鼓励你仔细阅读这个概念，它可能会改变你的观点。
+术语handler
+包含陷阱（traps）的占位符对象。
+traps
+提供属性访问的方法。这类似于操作系统中捕获器的概念。
+target
+代理虚拟化的对象。(由代理对象包装和操作的实际对象)
+在本文中，我将为 get 和 set 陷阱 提供简单的用例，考虑到最后，我们将看到如何使用它们并包含更复杂的功能，如API。
+语法和用例1let p = new Proxy(target, handler);
+将目标和处理程序传递给Proxy构造函数，这样就创建了一个proxy对象。现在， ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/test/post/reduce%E7%9A%84%E4%BD%BF%E7%94%A8%E6%8A%80%E5%B7%A7/" title="reduce的妙用">reduce的妙用</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-27T04:22:15.000Z" title="发表于 2023-09-27 12:22:15">2023-09-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/test/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">reduce 函数可以根据需要进行累加、过滤、分组、映射等操作，是一个非常强大的数组方法。在数据处理时使用的非常频繁，很多复杂的逻辑如果用reduce去处理，都非常的简洁，在实际的开发工作过程中，积累了一些常见又超级好用的 reduce 技巧的代码片段，筛选了如下 10 个，以供大家参考
+reduce 介绍reduce 是数组的方法，可以对数组中的每个元素依次执行一个回调函数，从左到右依次累积计算出一个最终的值。其语法为：
+1arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])
+
+其中，callback 是每个元素执行的回调函数，其包含 4 个参数：
+
+accumulator：累积器，即上一次回调函数执行的返回值。
+currentValue：当前元素的值。
+index：当前元素的下标。
+array：原始数组。
+initialValue 是可选的，表示累积器的初始值。
+
+reduce 函数的执行过程如下：
+1、如果没有提供 initialValue，则将数组的第一个元素作为累积器 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/test/post/utils/" title="JS 前端常用工具方法">JS 前端常用工具方法</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-27T04:22:15.000Z" title="发表于 2023-09-27 12:22:15">2023-09-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/test/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">JS 前端常用工具方法::: tip 提示很实用的工具方法哦，建议收藏！:stuck_out_tongue_winking_eye::::
+邮箱验证
+12345export const isEmail = (s) =&gt; &#123;  return /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((.[a-zA-Z0-9_-]&#123;2,3&#125;)&#123;1,2&#125;)$/.test(    s  );&#125;;
+
+手机号码
+123export const isMobile = (s) =&gt; &#123;  return /^1[0-9]&#123;10&#125;$/.test(s);&#125;;
+
+电话号码
+123export const isPhone = (s) =&gt; &#123;  return /^([0-9]&#123;3,4&#125;-)?[0-9]&#123;7,8&#125;$/.test(s);&#125;;
+
+是否 url 地址
+123export const isURL = (s) =&gt ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/test/post/%E4%BB%8E%E9%9B%B6%E5%BC%80%E5%A7%8B%E9%85%8D%E7%BD%AEwebpack/" title="从零开始配置webpack">从零开始配置webpack</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-27T04:15:20.000Z" title="发表于 2023-09-27 12:15:20">2023-09-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/test/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">从零开始配置webpack(基于webpack 4 和 babel 7版本)webpack 核心概念:
+Entry: 入口
+Module:模块，webpack中一切皆是模块
+Chunk:代码库，一个chunk由十多个模块组合而成，用于代码合并与分割
+Loader:模块转换器，用于把模块原内容按照需求转换成新内容
+Plugin:扩展插件，在webpack构建流程中的特定时机注入扩展逻辑来改变构建结果或做你想要做的事情
+Output: 输出结果
+
+webpack流程:webpack启动后会从 Entry 里配置的 Module 开始递归解析 Entry 依赖的所有Module.每找到一个Module,就会根据配置的Loader去找出对应的转换规则，对Module进行转换后，再解析出当前的Module依赖的Module.这些模块会以Entry为单位进行分组，一个Entry和其所有依赖的Module被分到一个组也就是一个Chunk。最好Webpack会把所有Chunk转换成文件输出。在整个流程中Webpack会在恰当的时机执行Plugin里定义的逻辑。
+下面我们开始从零开始配置一个支持打包图片 ...</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/test/post/CSS%E4%BC%AA%E5%85%83%E7%B4%A0/" title="9个你不知道的 CSS 伪元素">9个你不知道的 CSS 伪元素</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time datetime="2023-09-27T03:40:29.000Z" title="发表于 2023-09-27 11:40:29">2023-09-27</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/test/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="content">9个你不知道的 CSS 伪元素CSS 伪元素是一项强大的功能，它允许您为所选元素的特定部分设置样式，而无需额外的 JavaScript 代码。虽然许多开发人员都熟悉常用的伪元素，如 ::before 和 ::after，但还有一些其他元素经常被忽视或未得到充分利用。 
+1. ::selection 伪元素::selection 伪元素以用户选择的文本部分为目标。它提供了一种将样式应用于所选文本并自定义其外观的方法。 
+例子：
+1234::selection &#123;  background-color: yellow;  color: red;&#125;
+在上面的代码中，当用户在页面上选择文本时，它将以黄色背景和红色文本颜色突出显示。
+2.::first-letter伪元素::first-letter 伪元素允许您设置块级元素的第一个字母的样式。当您想将特殊格式应用于段落或标题的初始字符时，它会派上用场。 
+例子：
+1234p::first-letter &#123;  font-size: 2em;  color: red;&#125;
+在上面的代码片段中，每个段落的第一个字母 ...</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span><a class="page-number" href="/test/page/2/#content-inner">2</a><span class="space">&hellip;</span><a class="page-number" href="/test/page/4/#content-inner">4</a><a class="extend next" rel="next" href="/test/page/2/#content-inner"><i class="fas fa-chevron-right fa-fw"></i></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://xiaojinhe-cdn.iyoudui.cn/upload/common/202394/avatar.jpg" onerror="this.onerror=null;this.src='/test/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">YT Anck</div><div class="author-info__description">share & study</div></div><div class="card-info-data site-data is-center"><a href="/test/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/test/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/test/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ytking"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ytking" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:yt_anck@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">=>优秀的CV大师</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/test/post/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%9B%E7%A8%8B-%E4%BB%80%E4%B9%88%E7%9A%84%E7%BA%BF%E7%A8%8B/" title="什么是进程?什么的线程?">什么是进程?什么的线程?</a><time datetime="2023-10-13T08:02:47.000Z" title="发表于 2023-10-13 16:02:47">2023-10-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/test/post/JS%E6%95%B0%E5%AD%97%E7%B2%BE%E5%BA%A6%E4%B8%A2%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/" title="JS数字精度丢失的问题">JS数字精度丢失的问题</a><time datetime="2023-10-08T06:37:32.000Z" title="发表于 2023-10-08 14:37:32">2023-10-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/test/post/hello-world/" title="Hello World">Hello World</a><time datetime="2023-10-08T06:31:56.432Z" title="发表于 2023-10-08 14:31:56">2023-10-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/test/post/vue%E6%96%87%E6%9C%AC%E7%A9%BA%E6%A0%BC%E5%8D%A0%E4%BD%8D%E7%AC%A6/" title="vue里面的文本空格占位符">vue里面的文本空格占位符</a><time datetime="2023-09-28T08:45:16.000Z" title="发表于 2023-09-28 16:45:16">2023-09-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/test/post/Vue%E5%92%8CReact%E7%9A%84%E5%8C%BA%E5%88%AB/" title="Vue 和 React 的区别">Vue 和 React 的区别</a><time datetime="2023-09-27T05:26:18.000Z" title="发表于 2023-09-27 13:26:18">2023-09-27</time></div></div></div></div><div class="card-widget card-categories"><div class="item-headline">
+            <i class="fas fa-folder-open"></i>
+            <span>分类</span>
+            
+            </div>
+            <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/test/categories/Java/"><span class="card-category-list-name">Java</span><span class="card-category-list-count">2</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/test/categories/Linux/"><span class="card-category-list-name">Linux</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/test/categories/NodeJS/"><span class="card-category-list-name">NodeJS</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/test/categories/%E5%89%8D%E7%AB%AF/"><span class="card-category-list-name">前端</span><span class="card-category-list-count">21</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/test/categories/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"><span class="card-category-list-name">小程序</span><span class="card-category-list-count">2</span></a></li>
+            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/test/tags/CSS/" style="font-size: 1.22em; color: rgb(172, 162, 118)">CSS</a><a href="/test/tags/JavaScript/" style="font-size: 1.45em; color: rgb(3, 66, 174)">JavaScript</a><a href="/test/tags/%E9%9D%A2%E8%AF%95/" style="font-size: 1.38em; color: rgb(87, 40, 175)">面试</a><a href="/test/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/" style="font-size: 1.22em; color: rgb(87, 15, 98)">小程序</a><a href="/test/tags/ES6/" style="font-size: 1.22em; color: rgb(70, 98, 115)">ES6</a><a href="/test/tags/Java/" style="font-size: 1.3em; color: rgb(28, 17, 133)">Java</a><a href="/test/tags/test/" style="font-size: 1.22em; color: rgb(52, 34, 50)">test</a><a href="/test/tags/NodeJS/" style="font-size: 1.15em; color: rgb(106, 189, 107)">NodeJS</a><a href="/test/tags/Express/" style="font-size: 1.15em; color: rgb(184, 81, 141)">Express</a><a href="/test/tags/Koa/" style="font-size: 1.15em; color: rgb(19, 128, 128)">Koa</a><a href="/test/tags/Linux/" style="font-size: 1.15em; color: rgb(72, 133, 185)">Linux</a><a href="/test/tags/utils/" style="font-size: 1.15em; color: rgb(27, 125, 188)">utils</a><a href="/test/tags/window/" style="font-size: 1.15em; color: rgb(9, 125, 117)">window</a><a href="/test/tags/webpack/" style="font-size: 1.15em; color: rgb(78, 190, 106)">webpack</a><a href="/test/tags/cli/" style="font-size: 1.15em; color: rgb(114, 193, 126)">cli</a><a href="/test/tags/Tomcat/" style="font-size: 1.15em; color: rgb(132, 81, 72)">Tomcat</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/test/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><span class="card-archive-list-count">3</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/test/archives/2023/09/"><span class="card-archive-list-date">九月 2023</span><span class="card-archive-list-count">14</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/test/archives/2023/08/"><span class="card-archive-list-date">八月 2023</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/test/archives/2023/05/"><span class="card-archive-list-date">五月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/test/archives/2023/01/"><span class="card-archive-list-date">一月 2023</span><span class="card-archive-list-count">9</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">32</div></div><div class="webinfo-item"><div class="item-name">本站总字数 :</div><div class="item-count">85.1k</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">本站总访问量 :</div><div class="item-count" id="busuanzi_value_site_pv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2023-10-16T05:38:04.593Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By YT Anck</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/test/js/utils.js"></script><script src="/test/js/main.js"></script><script src="/test/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>window.typedJSFn = {
+  init: (str) => {
+    window.typed = new Typed('#subtitle', Object.assign({
+      strings: str,
+      startDelay: 300,
+      typeSpeed: 150,
+      loop: true,
+      backSpeed: 50,
+    }, null))
+  },
+  run: (subtitleType) => {
+    if (true) {
+      if (typeof Typed === 'function') {
+        subtitleType()
+      } else {
+        getScript('https://cdn.jsdelivr.net/npm/typed.js/dist/typed.umd.min.js').then(subtitleType)
+      }
+    } else {
+      subtitleType()
+    }
+  }
+}
+</script><script>function subtitleType () {
+  fetch('https://v1.hitokoto.cn')
+    .then(response => response.json())
+    .then(data => {
+      if (true) {
+        const from = '出自 ' + data.from
+        const sub = ["十年生死两茫茫，写程序，到天亮","千行代码，Bug何处藏","纵使上线又怎样，朝令改，夕断肠","领导每天新想法，天天改，日日忙","相顾无言，惟有泪千行","每晚灯火阑珊处，夜难寐，又加班"]
+        sub.unshift(data.hitokoto, from)
+        typedJSFn.init(sub)
+      } else {
+        document.getElementById('subtitle').textContent = data.hitokoto
+      }
+    })
+}
+typedJSFn.run(subtitleType)
+</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script>(() => {
+  const isChatBtn = true
+  const isChatHideShow = false
+
+  if (isChatBtn) {
+    const close = () => {
+      Chatra('minimizeWidget')
+      Chatra('hide')
+    }
+
+    const open = () => {
+      Chatra('openChat', true)
+      Chatra('show')
+    }
+
+    window.ChatraSetup = {
+      startHidden: true
+    }
+  
+    window.chatBtnFn = () => {
+      const isShow = document.getElementById('chatra').classList.contains('chatra--expanded')
+      isShow ? close() : open()
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        Chatra('hide')
+      },
+      show: () => {
+        Chatra('show')
+      }
+    }
+  }
+
+  (function(d, w, c) {
+    w.ChatraID = 'PhLXQufxgCL6iLDEc'
+    var s = d.createElement('script')
+    w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments)
+    }
+    s.async = true
+    s.src = 'https://call.chatra.io/chatra.js'
+    if (d.head) d.head.appendChild(s)
+  })(document, window, 'Chatra')
+
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/test/js/search/local-search.js"></script></div></div></body></html>

@@ -1,0 +1,332 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>JS异步编程 | YT'S BLOG</title><meta name="author" content="YT Anck"><meta name="copyright" content="YT Anck"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="JS异步发展历程知其然知其所以然，首先了解三个概念： 1.什么是同步？ 所谓同步，就是在发出一个”调用”时，在没有得到结果之前，该“调用”就不返回。但是一旦调用返回，就得到返回值了。换句话说，就是由“调用者”主动等待这个“调用”的结果。此调用执行完之前，阻塞之后的代码执行。 2.什么是异步？ “调用”在发出之后，这个调用就直接返回了，所以没有返回结果。换句话说，当一个异步过程调用发出后，调用者不会">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JS异步编程">
+<meta property="og:url" content="https://ytking.github.io/test/post/JS%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/index.html">
+<meta property="og:site_name" content="YT&#39;S BLOG">
+<meta property="og:description" content="JS异步发展历程知其然知其所以然，首先了解三个概念： 1.什么是同步？ 所谓同步，就是在发出一个”调用”时，在没有得到结果之前，该“调用”就不返回。但是一旦调用返回，就得到返回值了。换句话说，就是由“调用者”主动等待这个“调用”的结果。此调用执行完之前，阻塞之后的代码执行。 2.什么是异步？ “调用”在发出之后，这个调用就直接返回了，所以没有返回结果。换句话说，当一个异步过程调用发出后，调用者不会">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://xiaojinhe-cdn.iyoudui.cn/upload/common/202394/avatar.jpg">
+<meta property="article:published_time" content="2023-08-11T03:22:16.000Z">
+<meta property="article:modified_time" content="2023-10-08T06:31:56.429Z">
+<meta property="article:author" content="YT Anck">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://xiaojinhe-cdn.iyoudui.cn/upload/common/202394/avatar.jpg"><link rel="shortcut icon" href="/test/img/favicon.png"><link rel="canonical" href="https://ytking.github.io/test/post/JS%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/test/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/test/',
+  algolia: undefined,
+  localSearch: {"path":"/test/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"简"},
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'JS异步编程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-10-08 14:31:56'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://xiaojinhe-cdn.iyoudui.cn/upload/common/202394/avatar.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/test/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/test/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/test/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/test/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/test/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/test/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/test/images/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/test/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/test/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/test/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/test/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://xiaojinhe-cdn.iyoudui.cn/upload/common/202398/w-ban.jpg')"><nav id="nav"><span id="blog-info"><a href="/test/" title="YT'S BLOG"><img class="site-icon" src="https://xiaojinhe-cdn.iyoudui.cn/upload/common/2023/avata.jpg"/><span class="site-name">YT'S BLOG</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/test/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/test/archives/"><i class="fa-fw fas fa-archive"></i><span> 文章</span></a></div><div class="menus_item"><a class="site-page" href="/test/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/test/images/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/test/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/test/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/test/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/test/about/"><i class="fa-fw fas fa-heart"></i><span> About</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">JS异步编程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-08-11T03:22:16.000Z" title="发表于 2023-08-11 11:22:16">2023-08-11</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-10-08T06:31:56.429Z" title="更新于 2023-10-08 14:31:56">2023-10-08</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/test/categories/%E5%89%8D%E7%AB%AF/">前端</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">2.2k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>8分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="JS异步编程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span><span class="post-meta-separator">|</span><span class="post-meta-commentcount"><i class="far fa-comments fa-fw post-meta-icon"></i><span class="post-meta-label">评论数:</span><a href="/test/post/JS%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/#post-comment"><span class="gitalk-comment-count"><i class="fa-solid fa-spinner fa-spin"></i></span></a></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="JS异步发展历程"><a href="#JS异步发展历程" class="headerlink" title="JS异步发展历程"></a>JS异步发展历程</h2><p>知其然知其所以然，首先了解三个概念：</p>
+<p><strong>1.什么是同步？</strong></p>
+<p>所谓同步，就是在发出一个”调用”时，在没有得到结果之前，该“调用”就不返回。但是一旦调用返回，就得到返回值了。换句话说，就是由“调用者”主动等待这个“调用”的结果。此调用执行完之前，阻塞之后的代码执行。</p>
+<p><strong>2.什么是异步？</strong></p>
+<p>“调用”在发出之后，这个调用就直接返回了，所以没有返回结果。换句话说，当一个异步过程调用发出后，调用者不会立刻得到结果。而是在”调用”发出后，”被调用者”通过状态、通知来通知调用者，或通过回调函数处理这个调用。异步调用发出后，不影响后面代码的执行。</p>
+<p><strong>3.JavaScript 中为什么需要异步？</strong></p>
+<p>首先我们知道JavaScript是单线程的(即使新增了webworker，但是本质上JS还是单线程)。同步代码意味着什么呢？意味着有可能会阻塞，当我们有一个任务需要时间较长时，如果使用同步方式，那么就会阻塞之后的代码执行。而异步则不会，我们不会等待异步代码的之后，继续执行异步任务之后的代码。</p>
+<p>概念了解完了，我们就要进入今天的正题了。首先大家思考一下：平时在工作中，主要使用了哪些异步解决方案，这些异步方案有什么优缺点？</p>
+<p>异步最早的解决方案是回调函数，如事件的回调，setInterval&#x2F;setTimeout中的回调。但是回调函数有一个很常见的问题，就是回调地狱的问题(稍后会举例说明);</p>
+<p>为了解决回调地狱的问题，社区提出了Promise解决方案，ES6将其写进了语言标准。Promise一定程度上解决了回调地狱的问题，但是Promise也存在一些问题，如错误不能被try catch，而且使用Promise的链式调用，其实并没有从根本上解决回调地狱的问题，只是换了一种写法。</p>
+<p>ES6中引入 Generator 函数，Generator是一种异步编程解决方案，Generator 函数是协程在 ES6 的实现，最大特点就是可以交出函数的执行权，Generator 函数可以看出是异步任务的容器，需要暂停的地方，都用yield语句注明。但是 Generator 使用起来较为复杂。</p>
+<p>ES7又提出了新的异步解决方案:async&#x2F;await，async是 Generator 函数的语法糖，async&#x2F;await 使得异步代码看起来像同步代码，异步编程发展的目标就是让异步逻辑的代码看起来像同步一样。</p>
+<div class="tabs" id="test1"><ul class="nav-tabs no-default"></ul><div class="tab-contents"></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+
+<h4 id="1-callback"><a href="#1-callback" class="headerlink" title="1.callback"></a>1.callback</h4><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//node读取文件</span></span><br><span class="line">fs.<span class="title function_">readFile</span>(xxx, <span class="string">&#x27;utf-8&#x27;</span>, <span class="keyword">function</span>(<span class="params">err, data</span>) &#123;</span><br><span class="line">    <span class="comment">//code</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>回调函数的使用场景(包括但不限于):</p>
+<ul>
+<li>事件回调</li>
+<li>Node API</li>
+<li>setTimeout&#x2F;setInterval中的回调函数</li>
+<li>ajax 请求</li>
+</ul>
+<p>回调函数的优点: 简单。</p>
+<p>回调函数的缺点：</p>
+<p>异步回调嵌套会导致代码难以维护，并且不方便统一处理错误，不能 try catch 和 回调地狱(如先读取A文本内容，再根据A文本内容读取B再根据B的内容读取C…)。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fs.<span class="title function_">readFile</span>(A, <span class="string">&#x27;utf-8&#x27;</span>, <span class="keyword">function</span>(<span class="params">err, data</span>) &#123;</span><br><span class="line">    fs.<span class="title function_">readFile</span>(B, <span class="string">&#x27;utf-8&#x27;</span>, <span class="keyword">function</span>(<span class="params">err, data</span>) &#123;</span><br><span class="line">        fs.<span class="title function_">readFile</span>(C, <span class="string">&#x27;utf-8&#x27;</span>, <span class="keyword">function</span>(<span class="params">err, data</span>) &#123;</span><br><span class="line">            fs.<span class="title function_">readFile</span>(D, <span class="string">&#x27;utf-8&#x27;</span>, <span class="keyword">function</span>(<span class="params">err, data</span>) &#123;</span><br><span class="line">                <span class="comment">//....</span></span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<h3 id="2-Promise"><a href="#2-Promise" class="headerlink" title="2.Promise"></a>2.Promise</h3><p>Promise 一定程度上解决了回调地狱的问题，Promise 最早由社区提出和实现，ES6 将其写进了语言标准，统一了用法，原生提供了Promise对象。</p>
+<p>那么我们看看Promise是如何解决回调地狱问题的，仍然以上文的readFile 为例(先读取A文本内容，再根据A文本内容读取B再根据B的内容读取C)。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">read</span>(<span class="params">url</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        fs.<span class="title function_">readFile</span>(url, <span class="string">&#x27;utf8&#x27;</span>, <span class="function">(<span class="params">err, data</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(err) <span class="title function_">reject</span>(err);</span><br><span class="line">            <span class="title function_">resolve</span>(data);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">read</span>(A).<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">read</span>(B);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">read</span>(C);</span><br><span class="line">&#125;).<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="title function_">read</span>(D);</span><br><span class="line">&#125;).<span class="title function_">catch</span>(<span class="function"><span class="params">reason</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(reason);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Promise 的优点:</p>
+<ul>
+<li>一旦状态改变，就不会再变，任何时候都可以得到这个结果</li>
+<li>可以将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数</li>
+</ul>
+<p>缺点:</p>
+<ul>
+<li>无法取消 Promise</li>
+<li>当处于pending状态时，无法得知目前进展到哪一个阶段</li>
+<li>错误不能被 try catch<br>假设有这样一个需求：读取A,B,C三个文件内容，都读取成功后，再输出最终的结果。在Promise之前，我们一般可以借助发布订阅模式去实现:</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> pubsub = &#123;</span><br><span class="line">    <span class="attr">arry</span>: [],</span><br><span class="line">    <span class="title function_">emit</span>(<span class="params"></span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">arry</span>.<span class="title function_">forEach</span>(<span class="function"><span class="params">fn</span> =&gt;</span> <span class="title function_">fn</span>());</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="title function_">on</span>(<span class="params">fn</span>) &#123;</span><br><span class="line">        <span class="variable language_">this</span>.<span class="property">arry</span>.<span class="title function_">push</span>(fn);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> data = [];</span><br><span class="line">pubsub.<span class="title function_">on</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(data.<span class="property">length</span> === <span class="number">3</span>) &#123;</span><br><span class="line">        <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br><span class="line">fs.<span class="title function_">readFile</span>(A, <span class="string">&#x27;utf-8&#x27;</span>, <span class="function">(<span class="params">err, value</span>) =&gt;</span> &#123;</span><br><span class="line">    data.<span class="title function_">push</span>(value);</span><br><span class="line">    pubsub.<span class="title function_">emit</span>();</span><br><span class="line">&#125;);</span><br><span class="line">fs.<span class="title function_">readFile</span>(B, <span class="string">&#x27;utf-8&#x27;</span>, <span class="function">(<span class="params">err, value</span>) =&gt;</span> &#123;</span><br><span class="line">    data.<span class="title function_">push</span>(value);</span><br><span class="line">    pubsub.<span class="title function_">emit</span>();</span><br><span class="line">&#125;);</span><br><span class="line">fs.<span class="title function_">readFile</span>(C, <span class="string">&#x27;utf-8&#x27;</span>, <span class="function">(<span class="params">err, value</span>) =&gt;</span> &#123;</span><br><span class="line">    data.<span class="title function_">push</span>(value);</span><br><span class="line">    pubsub.<span class="title function_">emit</span>();</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Promise给我们提供了 Promise.all 的方法，对于这个需求，我们可以使用 Promise.all 来实现。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 将 fs.readFile 包装成promise接口</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">function</span> <span class="title function_">read</span>(<span class="params">url</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        fs.<span class="title function_">readFile</span>(url, <span class="string">&#x27;utf8&#x27;</span>, <span class="function">(<span class="params">err, data</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(err) <span class="title function_">reject</span>(err);</span><br><span class="line">            <span class="title function_">resolve</span>(data);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 使用 Promise</span></span><br><span class="line"><span class="comment"> * </span></span><br><span class="line"><span class="comment"> * 通过 Promise.all 可以实现多个异步并行执行，同一时刻获取最终结果的问题</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="title class_">Promise</span>.<span class="title function_">all</span>([</span><br><span class="line">    <span class="title function_">read</span>(A),</span><br><span class="line">    <span class="title function_">read</span>(B),</span><br><span class="line">    <span class="title function_">read</span>(C)</span><br><span class="line">]).<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span><br><span class="line">&#125;).<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> <span class="variable language_">console</span>.<span class="title function_">log</span>(err));</span><br></pre></td></tr></table></figure>
+<h3 id="3-Generator"><a href="#3-Generator" class="headerlink" title="3.Generator"></a>3.Generator</h3><p>Generator 函数是 ES6 提供的一种异步编程解决方案，整个 Generator 函数就是一个封装的异步任务，或者说是异步任务的容器。异步操作需要暂停的地方，都用 yield 语句注明。</p>
+<p>Generator 函数一般配合 yield 或 Promise 使用。Generator函数返回的是迭代器。对生成器和迭代器不了解的同学，请自行补习下基础。下面我们看一下 Generator 的简单使用:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span>* <span class="title function_">gen</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> a = <span class="keyword">yield</span> <span class="number">111</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(a);</span><br><span class="line">    <span class="keyword">let</span> b = <span class="keyword">yield</span> <span class="number">222</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(b);</span><br><span class="line">    <span class="keyword">let</span> c = <span class="keyword">yield</span> <span class="number">333</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(c);</span><br><span class="line">    <span class="keyword">let</span> d = <span class="keyword">yield</span> <span class="number">444</span>;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(d);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">let</span> t = <span class="title function_">gen</span>();</span><br><span class="line"><span class="comment">//next方法可以带一个参数，该参数就会被当作上一个yield表达式的返回值</span></span><br><span class="line">t.<span class="title function_">next</span>(<span class="number">1</span>); <span class="comment">//第一次调用next函数时，传递的参数无效</span></span><br><span class="line">t.<span class="title function_">next</span>(<span class="number">2</span>); <span class="comment">//a输出2;</span></span><br><span class="line">t.<span class="title function_">next</span>(<span class="number">3</span>); <span class="comment">//b输出3; </span></span><br><span class="line">t.<span class="title function_">next</span>(<span class="number">4</span>); <span class="comment">//c输出4;</span></span><br><span class="line">t.<span class="title function_">next</span>(<span class="number">5</span>); <span class="comment">//d输出5;</span></span><br></pre></td></tr></table></figure>
+<p>为了让大家更好的理解上面代码是如何执行的，我画了一张图，分别对应每一次的next方法调用:</p>
+<p>仍然以上文的 readFile (先读取A文本内容，再根据A文本内容读取B再根据B的内容读取C)为例，使用 Generator + co库来实现:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> co = <span class="built_in">require</span>(<span class="string">&#x27;co&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> bluebird = <span class="built_in">require</span>(<span class="string">&#x27;bluebird&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> readFile = bluebird.<span class="title function_">promisify</span>(fs.<span class="property">readFile</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span>* <span class="title function_">read</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">yield</span> <span class="title function_">readFile</span>(A, <span class="string">&#x27;utf-8&#x27;</span>);</span><br><span class="line">    <span class="keyword">yield</span> <span class="title function_">readFile</span>(B, <span class="string">&#x27;utf-8&#x27;</span>);</span><br><span class="line">    <span class="keyword">yield</span> <span class="title function_">readFile</span>(C, <span class="string">&#x27;utf-8&#x27;</span>);</span><br><span class="line">    <span class="comment">//....</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="title function_">co</span>(<span class="title function_">read</span>()).<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//code</span></span><br><span class="line">&#125;).<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//code</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Generator的缺点大约不用我说了，除非是找虐，不然一般不会直接使用 Generator 来解决异步的(当然也不排除是因为我不熟练)~~</p>
+<h3 id="4-async-await"><a href="#4-async-await" class="headerlink" title="4.async&#x2F;await"></a>4.async&#x2F;await</h3><p>ES7中引入了 async&#x2F;await 概念。async 其实是一个语法糖，它的实现就是将 Generator函数和自动执行器（co），包装在一个函数中。</p>
+<p>async&#x2F;await 的优点是代码清晰，不用像 Promise 写很多 then 链，就可以处理回调地狱的问题。并且错误可以被try catch。</p>
+<p>仍然以上文的readFile (先读取A文本内容，再根据A文本内容读取B再根据B的内容读取C) 为例，使用 async&#x2F;await 来实现:</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> bluebird = <span class="built_in">require</span>(<span class="string">&#x27;bluebird&#x27;</span>);</span><br><span class="line"><span class="keyword">const</span> readFile = bluebird.<span class="title function_">promisify</span>(fs.<span class="property">readFile</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">read</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">await</span> <span class="title function_">readFile</span>(A, <span class="string">&#x27;utf-8&#x27;</span>);</span><br><span class="line">    <span class="keyword">await</span> <span class="title function_">readFile</span>(B, <span class="string">&#x27;utf-8&#x27;</span>);</span><br><span class="line">    <span class="keyword">await</span> <span class="title function_">readFile</span>(C, <span class="string">&#x27;utf-8&#x27;</span>);</span><br><span class="line">    <span class="comment">//code</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">read</span>().<span class="title function_">then</span>(<span class="function">(<span class="params">data</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//code</span></span><br><span class="line">&#125;).<span class="title function_">catch</span>(<span class="function"><span class="params">err</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">//code</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>使用 async&#x2F;await 实现此需求：读取A,B,C三个文件内容，都读取成功后，再输出最终的结果。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="title function_">read</span>(<span class="params">url</span>) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="title class_">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">        fs.<span class="title function_">readFile</span>(url, <span class="string">&#x27;utf8&#x27;</span>, <span class="function">(<span class="params">err, data</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(err) <span class="title function_">reject</span>(err);</span><br><span class="line">            <span class="title function_">resolve</span>(data);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="keyword">function</span> <span class="title function_">readAsync</span>(<span class="params"></span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> data = <span class="keyword">await</span> <span class="title class_">Promise</span>.<span class="title function_">all</span>([</span><br><span class="line">        <span class="title function_">read</span>(A),</span><br><span class="line">        <span class="title function_">read</span>(B),</span><br><span class="line">        <span class="title function_">read</span>(C)</span><br><span class="line">    ]);</span><br><span class="line">    <span class="keyword">return</span> data;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="title function_">readAsync</span>().<span class="title function_">then</span>(<span class="function"><span class="params">data</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="variable language_">console</span>.<span class="title function_">log</span>(data);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>所以JS的异步发展史，可以认为是从 callback -&gt; promise -&gt; generator -&gt; async&#x2F;await。async&#x2F;await 使得异步代码看起来像同步代码，异步编程发展的目标就是让异步逻辑的代码看起来像同步一样。</p>
+<p>因本人水平有限，文中内容未必百分百正确，如有不对的地方，请给我留言，谢谢。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://ytking.github.io/test">YT Anck</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://ytking.github.io/test/post/JS%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/">https://ytking.github.io/test/post/JS%E5%BC%82%E6%AD%A5%E7%BC%96%E7%A8%8B/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://ytking.github.io/test" target="_blank">YT'S BLOG</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/test/tags/JavaScript/">JavaScript</a></div><div class="post_share"><div class="social-share" data-image="https://xiaojinhe-cdn.iyoudui.cn/upload/common/202394/avatar.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/test/post/%E6%89%8B%E6%91%B8%E6%89%8B%E6%95%99%E4%BD%A0%E6%92%B8%E4%B8%80%E4%B8%AA%E8%84%9A%E6%89%8B%E6%9E%B6/" title="手摸手教你撸一个脚手架"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">手摸手教你撸一个脚手架</div></div></a></div><div class="next-post pull-right"><a href="/test/post/%E4%BD%BF%E7%94%A8CSS%E5%AE%9E%E7%8E%B0%E8%BF%9B%E5%BA%A6%E6%9D%A1%E5%92%8C%E9%A5%BC%E5%9B%BE/" title="使用CSS实现进度条和饼图"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">使用CSS实现进度条和饼图</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/test/post/20%E9%81%93%E5%A4%A7%E5%8E%82%E9%9D%A2%E8%AF%95%E9%A2%98/" title="20道大厂面试题"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-11</div><div class="title">20道大厂面试题</div></div></a></div><div><a href="/test/post/60%E4%B8%AAJS%E5%AE%9E%E7%94%A8%E7%9A%84%E4%BB%A3%E7%A0%81%E5%B0%8F%E6%8A%80%E5%B7%A7/" title="60个JS实用的代码小技巧"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-01</div><div class="title">60个JS实用的代码小技巧</div></div></a></div><div><a href="/test/post/25%E6%9D%A1%E7%A4%BA%E4%BE%8B%E8%AE%A9%E4%BD%A0%E7%9A%84%E4%BB%A3%E7%A0%81%E6%9B%B4%E7%AE%80%E6%B4%81/" title="25 条示例代码让你的代码更简洁"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-11</div><div class="title">25 条示例代码让你的代码更简洁</div></div></a></div><div><a href="/test/post/ES6%E6%9D%A5%E7%AE%80%E5%8C%96%E4%BB%A3%E7%A0%81,%E4%BD%A0%E9%83%BD%E7%94%A8%E8%BF%87%E5%93%AA%E4%BA%9B/" title="ES6来简化代码,你都用过哪些"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-01</div><div class="title">ES6来简化代码,你都用过哪些</div></div></a></div><div><a href="/test/post/ES6%E9%9D%A2%E8%AF%95%E7%90%86%E8%AE%BA%E7%9F%A5%E8%AF%86%E7%82%B9%E6%B1%87%E6%80%BB/" title="ES6面试理论知识点汇总"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-01-01</div><div class="title">ES6面试理论知识点汇总</div></div></a></div><div><a href="/test/post/Proxy%E5%8F%8A%E5%85%B6%E4%BC%98%E7%82%B9/" title="什么是 Proxy"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-09-27</div><div class="title">什么是 Proxy</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div><div class="comment-switch"><span class="first-comment">Gitalk</span><span id="switch-btn"></span><span class="second-comment">Valine</span></div></div><div class="comment-wrap"><div><div id="gitalk-container"></div></div><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://xiaojinhe-cdn.iyoudui.cn/upload/common/202394/avatar.jpg" onerror="this.onerror=null;this.src='/test/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">YT Anck</div><div class="author-info__description">share & study</div></div><div class="card-info-data site-data is-center"><a href="/test/archives/"><div class="headline">文章</div><div class="length-num">32</div></a><a href="/test/tags/"><div class="headline">标签</div><div class="length-num">16</div></a><a href="/test/categories/"><div class="headline">分类</div><div class="length-num">5</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/ytking"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ytking" target="_blank" title="Github"><i class="fab fa-github" style="color: #24292e;"></i></a><a class="social-icon" href="mailto:yt_anck@163.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #4a7dbe;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">=>优秀的CV大师</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JS%E5%BC%82%E6%AD%A5%E5%8F%91%E5%B1%95%E5%8E%86%E7%A8%8B"><span class="toc-number">1.</span> <span class="toc-text">JS异步发展历程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-callback"><span class="toc-number">1.0.1.</span> <span class="toc-text">1.callback</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Promise"><span class="toc-number">1.1.</span> <span class="toc-text">2.Promise</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-Generator"><span class="toc-number">1.2.</span> <span class="toc-text">3.Generator</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-async-await"><span class="toc-number">1.3.</span> <span class="toc-text">4.async&#x2F;await</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/test/post/%E4%BB%80%E4%B9%88%E6%98%AF%E8%BF%9B%E7%A8%8B-%E4%BB%80%E4%B9%88%E7%9A%84%E7%BA%BF%E7%A8%8B/" title="什么是进程?什么的线程?">什么是进程?什么的线程?</a><time datetime="2023-10-13T08:02:47.000Z" title="发表于 2023-10-13 16:02:47">2023-10-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/test/post/JS%E6%95%B0%E5%AD%97%E7%B2%BE%E5%BA%A6%E4%B8%A2%E5%A4%B1%E7%9A%84%E9%97%AE%E9%A2%98/" title="JS数字精度丢失的问题">JS数字精度丢失的问题</a><time datetime="2023-10-08T06:37:32.000Z" title="发表于 2023-10-08 14:37:32">2023-10-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/test/post/hello-world/" title="Hello World">Hello World</a><time datetime="2023-10-08T06:31:56.432Z" title="发表于 2023-10-08 14:31:56">2023-10-08</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/test/post/vue%E6%96%87%E6%9C%AC%E7%A9%BA%E6%A0%BC%E5%8D%A0%E4%BD%8D%E7%AC%A6/" title="vue里面的文本空格占位符">vue里面的文本空格占位符</a><time datetime="2023-09-28T08:45:16.000Z" title="发表于 2023-09-28 16:45:16">2023-09-28</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/test/post/Vue%E5%92%8CReact%E7%9A%84%E5%8C%BA%E5%88%AB/" title="Vue 和 React 的区别">Vue 和 React 的区别</a><time datetime="2023-09-27T05:26:18.000Z" title="发表于 2023-09-27 13:26:18">2023-09-27</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By YT Anck</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="translateLink" type="button" title="简繁转换">简</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat-btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/test/js/utils.js"></script><script src="/test/js/main.js"></script><script src="/test/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><script>(() => {
+  const initGitalk = () => {
+    const gitalk = new Gitalk(Object.assign({
+      clientID: 'e5fde9e84af78984af83',
+      clientSecret: '23ad48374fb53e6f19262198d22aae81a2d3a57d',
+      repo: 'https://github.com/ytking/comments.git',
+      owner: 'ytking',
+      admin: ['ytking'],
+      id: '070d140002eabda13a90f5d9e42620d8',
+      updateCountCallback: commentCount
+    },null))
+
+    gitalk.render('gitalk-container')
+  }
+
+  const loadGitalk = async() => {
+    if (typeof Gitalk === 'function') initGitalk()
+    else {
+      await getCSS('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css')
+      await getScript('https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.js')
+      initGitalk()
+    }
+  }
+  
+  const commentCount = n => {
+    const isCommentCount = document.querySelector('#post-meta .gitalk-comment-count')
+    if (isCommentCount) {
+      isCommentCount.textContent= n
+    }
+  }
+
+  if ('Gitalk' === 'Gitalk' || !false) {
+    if (false) btf.loadComment(document.getElementById('gitalk-container'), loadGitalk)
+    else loadGitalk()
+  } else {
+    window.loadOtherComment = loadGitalk
+  }
+})()</script><script>(() => {
+  const initValine = () => {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'rfVTHuaTwCchs7C1ynGxONxe-MdYXbMMI',
+      appKey: '6eL0qcaHZILsr1iOXbH0NuBj',
+      avatar: '',
+      serverURLs: 'https://rfvthuat.api.lncldglobal.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  const loadValine = async () => {
+    if (typeof Valine === 'function') initValine()
+    else {
+      await getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js')
+      initValine()
+    }
+  }
+
+  if ('Gitalk' === 'Valine' || !false) {
+    if (false) btf.loadComment(document.getElementById('vcomment'),loadValine)
+    else setTimeout(loadValine, 0)
+  } else {
+    window.loadOtherComment = loadValine
+  }
+})()</script></div><script id="canvas_nest" defer="defer" color="0,0,255" opacity="0.7" zIndex="-1" count="99" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-nest.min.js"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/click-heart.min.js" async="async" mobile="false"></script><script>(() => {
+  const isChatBtn = true
+  const isChatHideShow = false
+
+  if (isChatBtn) {
+    const close = () => {
+      Chatra('minimizeWidget')
+      Chatra('hide')
+    }
+
+    const open = () => {
+      Chatra('openChat', true)
+      Chatra('show')
+    }
+
+    window.ChatraSetup = {
+      startHidden: true
+    }
+  
+    window.chatBtnFn = () => {
+      const isShow = document.getElementById('chatra').classList.contains('chatra--expanded')
+      isShow ? close() : open()
+    }
+  } else if (isChatHideShow) {
+    window.chatBtn = {
+      hide: () => {
+        Chatra('hide')
+      },
+      show: () => {
+        Chatra('show')
+      }
+    }
+  }
+
+  (function(d, w, c) {
+    w.ChatraID = 'PhLXQufxgCL6iLDEc'
+    var s = d.createElement('script')
+    w[c] = w[c] || function() {
+        (w[c].q = w[c].q || []).push(arguments)
+    }
+    s.async = true
+    s.src = 'https://call.chatra.io/chatra.js'
+    if (d.head) d.head.appendChild(s)
+  })(document, window, 'Chatra')
+
+})()</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div class="no-result" id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/test/js/search/local-search.js"></script></div></div></body></html>
