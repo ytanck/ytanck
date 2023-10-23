@@ -1,3 +1,9 @@
+<h2 align="center">
+
+[![Typing SVG](https://readme-typing-svg.herokuapp.com?font='Comfortaa'&color=%23268F77&size=30&center=true&vCenter=true&height=30&lines=console.log(%22Hello%20World%22);Welcome+to+my+profile+!)](https://git.io/typing-svg)
+ 
+</h2>
+
 <img align="right" src="https://github-readme-stats.vercel.app/api?username=ytking&show_icons=true">
 
 ### Hi there 👋
