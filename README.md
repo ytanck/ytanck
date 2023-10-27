@@ -10,7 +10,7 @@
 - 🤝 很高兴you can关注我
 - 🤣 一个优秀的CV大师
 - 👀 这几年没在搞前端
-- 🌈 平时有空就写点[博客](http://www.yyff.wang/)
+- 🌈 平时有空就写点[博客](http://www.whyta.cn/)
 
 
 
