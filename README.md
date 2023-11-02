@@ -39,7 +39,7 @@ Here are some ideas to get you started:
 
 # JavaScript Learning...
 
-## 阮一峰老师的 [ES6 入门教程](http://es6.ruanyifeng.com/)
+### 阮一峰老师的 [ES6 入门教程](http://es6.ruanyifeng.com/)
 - [ECMAScript 6 简介](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/01.ECMAScript%206%20%E7%AE%80%E4%BB%8B.md)
 - [let 和 const 简介](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/02.let%20%E5%92%8C%20const%20%E5%91%BD%E4%BB%A4.md)
 - [变量的解构赋值](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/03.%E5%8F%98%E9%87%8F%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC.md)
