@@ -22,9 +22,6 @@
 ![vue](https://img.shields.io/badge/vue-%2342b883)
 ![react](https://img.shields.io/badge/react-%23087EA4)
 
-
-
-
 <!--
 **ytking** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 
@@ -39,3 +36,8 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+
+# JavaScript Learning...
+
+## 阮一峰老师的 [ES6 入门教程](http://es6.ruanyifeng.com/)
+- [01.ECMAScript 6 简介](https://github.com/ytking/docs/)
