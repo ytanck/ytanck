@@ -38,7 +38,7 @@ Here are some ideas to get you started:
 -->
 <br />
 
-## JavaScript Learning...
+<h1>JavaScript Learning...</h1> 
 
 ### 阮一峰老师的 [ES6 入门教程](http://es6.ruanyifeng.com/)
 
