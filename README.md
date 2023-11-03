@@ -42,9 +42,9 @@ Here are some ideas to get you started:
 # Learning...
 <!-- <h1>JavaScript Learning...</h1>  -->
 
-<!-- ### 阮一峰老师的 [ES6 入门教程](http://es6.ruanyifeng.com/) -->
+## 阮一峰老师的 [ES6 入门教程](http://es6.ruanyifeng.com/)
 
-| [阮一峰ES6教程](http://es6.ruanyifeng.com/) | ==> | [学习总结](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B%2F33.ES6%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93.md) |
+| 阮一峰ES6教程| ==> | [学习总结](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B%2F33.ES6%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93.md) |
 |--------| :---------|--------|
 | [ES6 简介](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/01.ECMAScript%206%20%E7%AE%80%E4%BB%8B.md) | [参考链接](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/34.%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5.md)  |	[最新提案](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/29.%E6%9C%80%E6%96%B0%E6%8F%90%E6%A1%88.md) |
 | [let 和 const 简介](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/02.let%20%E5%92%8C%20const%20%E5%91%BD%E4%BB%A4.md) | [变量的解构赋值](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/03.%E5%8F%98%E9%87%8F%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC.md) | [字符串的扩展](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/04.%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%89%A9%E5%B1%95.md)|
