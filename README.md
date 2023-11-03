@@ -1,4 +1,5 @@
 <h2 align="center">
+<img align="center" src="https://img.shields.io/badge/github-ytking-brightgreen.svg">
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font='Comfortaa'&color=%23268F77&size=30&center=true&vCenter=true&height=30&lines=console.log(%22Hello%20World%22);Welcome+to+my+profile+!)](https://git.io/typing-svg)
  
@@ -37,10 +38,10 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 <br />
-<center>[![github](https://img.shields.io/badge/github-ytking-brightgreen.svg)](https://github.com/ytking)</center>
+<center><img align="center" src="https://img.shields.io/badge/github-ytking-brightgreen.svg"></center>
 
 <h1>JavaScript Learning...</h1> 
-[![github](https://img.shields.io/badge/github-ytking-brightgreen.svg)](https://github.com/ytking)
+
 
 | [阮一峰ES6教程](http://es6.ruanyifeng.com/) | ==> | [学习总结](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B%2F33.ES6%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93.md) |
 |--------| :---------|--------|
