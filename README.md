@@ -37,12 +37,10 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 <br />
-<center>[![github](https://img.shields.io/badge/github-ytking-brightgreen.svg)](https://github.com/ytking)</center>
 
 <h1>JavaScript Learning...</h1> 
-<img align="center" src="https://img.shields.io/badge/github-ytking-brightgreen.svg">
 
-### 阮一峰老师的 [ES6 入门教程](http://es6.ruanyifeng.com/)
+<!-- ### 阮一峰老师的 [ES6 入门教程](http://es6.ruanyifeng.com/) -->
 
 | [阮一峰ES6教程](http://es6.ruanyifeng.com/) | ==> | [学习总结](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B%2F33.ES6%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93.md) |
 |--------| :---------|--------|
