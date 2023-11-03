@@ -36,16 +36,17 @@ Here are some ideas to get you started:
 - 😄 Pronouns: ...
 - ⚡ Fun fact: ...
 -->
+<br />
 
-# JavaScript Learning...
+## JavaScript Learning...
 
 ### 阮一峰老师的 [ES6 入门教程](http://es6.ruanyifeng.com/)
 
-| **阮一峰ES6教程** |  |  |
+| 阮一峰ES6教程 | ==> | [学习总结](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B%2F33.ES6%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93.md) |
 |--------| :---------|--------|
 | [ES6 简介](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/01.ECMAScript%206%20%E7%AE%80%E4%BB%8B.md) | [参考链接](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/34.%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5.md)  |	[最新提案](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/29.%E6%9C%80%E6%96%B0%E6%8F%90%E6%A1%88.md) |
 | [let 和 const 简介](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/02.let%20%E5%92%8C%20const%20%E5%91%BD%E4%BB%A4.md) | [变量的解构赋值](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/03.%E5%8F%98%E9%87%8F%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC.md) | [字符串的扩展](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/04.%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%89%A9%E5%B1%95.md)|
-[字符串的新增方法](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/05.%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95.md) | [正则的扩展](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/06.%E6%AD%A3%E5%88%99%E7%9A%84%E6%89%A9%E5%B1%95.md) |[数值的扩展](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/07.%E6%95%B0%E5%80%BC%E7%9A%84%E6%89%A9%E5%B1%95.md)|
+|[字符串的新增方法](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/05.%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95.md) | [正则的扩展](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/06.%E6%AD%A3%E5%88%99%E7%9A%84%E6%89%A9%E5%B1%95.md) |[数值的扩展](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/07.%E6%95%B0%E5%80%BC%E7%9A%84%E6%89%A9%E5%B1%95.md)|
 | [函数的扩展](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/08.%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95.md) | [数组的扩展](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/09.%E6%95%B0%E7%BB%84%E7%9A%84%E6%89%A9%E5%B1%95.md) |[对象的扩展](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/10.%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95.md)|
 | [对象的新增方法](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/11.%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95.md) | [Symbol](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/12.Symbol.md) |[Set 和 Map 数据结构](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/13.Set%20%E5%92%8C%20Map%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md)|
 | [Proxy](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/14.Proxy.md) | [Reflect](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/15.Reflect.md) |[Promise 对象](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/16.Promise%20%E5%AF%B9%E8%B1%A1.md)|
@@ -54,66 +55,9 @@ Here are some ideas to get you started:
 | [Module 的语法](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/23.Module%20%E7%9A%84%E8%AF%AD%E6%B3%95.md) | [Module 的加载实现](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/24.Module%20%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0.md) |[编程风格](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/25.%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC.md)|
 | [读懂 ECMAScript 规格](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/26.%E8%AF%BB%E6%87%82%20ECMAScript%20%E8%A7%84%E6%A0%BC.md) | [异步遍历器](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/27.%E5%BC%82%E6%AD%A5%E9%81%8D%E5%8E%86%E5%99%A8.md) |[ArrayBuffer](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/28.ArrayBuffer.md)|
 | [装饰器](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/30.%E8%A3%85%E9%A5%B0%E5%99%A8.md) | [函数式编程](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/31.%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.md) |[Mixin](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/32.Mixin.md)|
-| [SIMD](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/33.SIMD.md) | ... |...|
 <!-- |a|a|a| -->
 
-
-<!-- <table>
-    <tr>
-        <td colspan="3"><a href="">ES6 入门教程</a></td>       
-    </tr>
-    <tr>
-        <td>行1列1</td> 
-        <td>行1列2</td> 
-        <td>行1列3</td> 
-   </tr>
-    <tr>
-  		<td>行2列1</td> 
-        <td>行2列2</td> 
-        <td>行2列3</td> 
-    </tr>
-    <tr>
-        <td>行3列1</td> 
-        <td>行3列2</td> 
-        <td>行3列3</td> 
-    </tr>
-</table> -->
-
-<!-- ### 阮一峰老师的 [ES6 入门教程](http://es6.ruanyifeng.com/)
-- [ECMAScript 6 简介](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/01.ECMAScript%206%20%E7%AE%80%E4%BB%8B.md)
-- [let 和 const 简介](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/02.let%20%E5%92%8C%20const%20%E5%91%BD%E4%BB%A4.md)
-- [变量的解构赋值](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/03.%E5%8F%98%E9%87%8F%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC.md)
-- [字符串的扩展](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/04.%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%89%A9%E5%B1%95.md)
-- [字符串的新增方法](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/05.%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95.md)
-- [正则的扩展](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/06.%E6%AD%A3%E5%88%99%E7%9A%84%E6%89%A9%E5%B1%95.md)
-- [数值的扩展](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/07.%E6%95%B0%E5%80%BC%E7%9A%84%E6%89%A9%E5%B1%95.md)
-- [函数的扩展](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/08.%E5%87%BD%E6%95%B0%E7%9A%84%E6%89%A9%E5%B1%95.md)
-- [数组的扩展](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/09.%E6%95%B0%E7%BB%84%E7%9A%84%E6%89%A9%E5%B1%95.md)
-- [对象的扩展](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/10.%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%89%A9%E5%B1%95.md)
-- [对象的新增方法](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/11.%E5%AF%B9%E8%B1%A1%E7%9A%84%E6%96%B0%E5%A2%9E%E6%96%B9%E6%B3%95.md)
-- [Symbol](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/12.Symbol.md)
-- [Set 和 Map 数据结构](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/13.Set%20%E5%92%8C%20Map%20%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84.md)
-- [Proxy](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/14.Proxy.md)
-- [Reflect](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/15.Reflect.md)
-- [Promise 对象](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/16.Promise%20%E5%AF%B9%E8%B1%A1.md)
-- [Iterator 和 for...of 循环](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/17.Iterator%20%E5%92%8C%20for-of%20%E5%BE%AA%E7%8E%AF.md)
-- [Generator 函数的语法](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/18.Generator%20%E5%87%BD%E6%95%B0%E7%9A%84%E8%AF%AD%E6%B3%95.md)
-- [Generator 函数的异步应用](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/19.Generator%20%E5%87%BD%E6%95%B0%E7%9A%84%E5%BC%82%E6%AD%A5%E5%BA%94%E7%94%A8.md)
-- [async 函数](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/20.async%20%E5%87%BD%E6%95%B0.md)
-- [Class 的基本语法](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/21.Class%20%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95.md)
-- [Class 的继承](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/22.Class%20%E7%9A%84%E7%BB%A7%E6%89%BF.md)
-- [Module 的语法](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/23.Module%20%E7%9A%84%E8%AF%AD%E6%B3%95.md)
-- [Module 的加载实现](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/24.Module%20%E7%9A%84%E5%8A%A0%E8%BD%BD%E5%AE%9E%E7%8E%B0.md)
-- [编程风格](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/25.%E7%BC%96%E7%A8%8B%E9%A3%8E%E6%A0%BC.md)
-- [读懂 ECMAScript 规格](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/26.%E8%AF%BB%E6%87%82%20ECMAScript%20%E8%A7%84%E6%A0%BC.md)
-- [异步遍历器](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/27.%E5%BC%82%E6%AD%A5%E9%81%8D%E5%8E%86%E5%99%A8.md)
-- [ArrayBuffer](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/28.ArrayBuffer.md)
-- [最新提案](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/29.%E6%9C%80%E6%96%B0%E6%8F%90%E6%A1%88.md)
-- [装饰器](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/30.%E8%A3%85%E9%A5%B0%E5%99%A8.md)
-- [函数式编程](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/31.%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.md)
-- [Mixin](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/32.Mixin.md)
-- [SIMD](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/33.SIMD.md)
-- [参考链接](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/34.%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5.md) -->
+### 面试
 
 
 
