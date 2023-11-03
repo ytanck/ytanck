@@ -1,6 +1,4 @@
 <h2 align="center">
-<img align="center" src="https://img.shields.io/badge/github-ytking-brightgreen.svg">
-
 [![Typing SVG](https://readme-typing-svg.herokuapp.com?font='Comfortaa'&color=%23268F77&size=30&center=true&vCenter=true&height=30&lines=console.log(%22Hello%20World%22);Welcome+to+my+profile+!)](https://git.io/typing-svg)
  
 </h2>
@@ -38,7 +36,6 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 <br />
-<center><img align="center" src="https://img.shields.io/badge/github-ytking-brightgreen.svg"></center>
 
 <h1>JavaScript Learning...</h1> 
 
