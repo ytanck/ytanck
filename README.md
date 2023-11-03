@@ -37,12 +37,12 @@ Here are some ideas to get you started:
 - ⚡ Fun fact: ...
 -->
 <br />
+<center>[![github](https://img.shields.io/badge/github-ytking-brightgreen.svg)](https://github.com/ytking)</center>
 
 <h1>JavaScript Learning...</h1> 
+[![github](https://img.shields.io/badge/github-ytking-brightgreen.svg)](https://github.com/ytking)
 
-### 阮一峰老师的 [ES6 入门教程](http://es6.ruanyifeng.com/)
-
-| 阮一峰ES6教程 | ==> | [学习总结](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B%2F33.ES6%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93.md) |
+| [阮一峰ES6教程](http://es6.ruanyifeng.com/) | ==> | [学习总结](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B%2F33.ES6%E5%AD%A6%E4%B9%A0%E6%80%BB%E7%BB%93.md) |
 |--------| :---------|--------|
 | [ES6 简介](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/01.ECMAScript%206%20%E7%AE%80%E4%BB%8B.md) | [参考链接](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/34.%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5.md)  |	[最新提案](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/29.%E6%9C%80%E6%96%B0%E6%8F%90%E6%A1%88.md) |
 | [let 和 const 简介](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/02.let%20%E5%92%8C%20const%20%E5%91%BD%E4%BB%A4.md) | [变量的解构赋值](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/03.%E5%8F%98%E9%87%8F%E7%9A%84%E8%A7%A3%E6%9E%84%E8%B5%8B%E5%80%BC.md) | [字符串的扩展](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/04.%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%9A%84%E6%89%A9%E5%B1%95.md)|
@@ -57,7 +57,14 @@ Here are some ideas to get you started:
 | [装饰器](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/30.%E8%A3%85%E9%A5%B0%E5%99%A8.md) | [函数式编程](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/31.%E5%87%BD%E6%95%B0%E5%BC%8F%E7%BC%96%E7%A8%8B.md) |[Mixin](https://github.com/ytking/ytking/blob/master/docs/ES6%20%E6%95%99%E7%A8%8B/32.Mixin.md)|
 <!-- |a|a|a| -->
 
-### 面试
+## 面试系列
+
+- [面试问题锦集](https://github.com/ytking/ytking/issues/35)
+- [什么是进程？什么的线程？有什么区别](https://github.com/ytking/ytking/issues/23)
+- [说说你对 shell 的理解？常见的命令？](https://github.com/ytking/ytking/issues/22)
+- [call和apply、bind的理解及模拟实现](https://github.com/ytking/ytking/issues/20)
+- [JavaScript从原型到原型链](https://github.com/ytking/ytking/issues/5)
+- [JavaScript之深浅拷贝](https://github.com/ytking/ytking/issues/4)
 
 
 
