@@ -21,6 +21,7 @@
 ![nodejs](https://img.shields.io/badge/node-yellow)
 ![vue](https://img.shields.io/badge/vue-%2342b883)
 ![react](https://img.shields.io/badge/react-%23087EA4)
+![github](https://img.shields.io/badge/github-ytking-brightgreen.svg)
 
 <!--
 **ytking** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
@@ -38,7 +39,8 @@ Here are some ideas to get you started:
 -->
 <br />
 
-<h1>JavaScript Learning...</h1> 
+# Learning...
+<!-- <h1>JavaScript Learning...</h1>  -->
 
 <!-- ### 阮一峰老师的 [ES6 入门教程](http://es6.ruanyifeng.com/) -->
 
