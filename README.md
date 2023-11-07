@@ -74,6 +74,7 @@ Here are some ideas to get you started:
 - [60个JS实用的代码小技巧](https://github.com/ytking/ytking/issues/41)
 - [前端项目性能优化方案](https://github.com/ytking/ytking/issues/42)
 - [JS 前端常用工具函数](https://github.com/ytking/ytking/issues/43)
+- [面试官：说说地址栏输入 URL 敲下回车后发生了什么?](https://github.com/ytking/ytking/issues/45)
 
 
 ## Vue系列
