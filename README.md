@@ -79,6 +79,9 @@ Here are some ideas to get you started:
 
 ## Vue系列
 
+- [vue3有了解过吗？能说说跟vue2的区别吗？](https://whyta.cn/post/654de0797958/)
+- [Vue3.0的设计目标是什么？做了哪些优化](https://whyta.cn/post/c14f6be9a934/)
+- [Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？](https://whyta.cn/post/f72ec18dda36/)
 - [Vue3.0 所采用的 Composition Api 与 Vue2.x 使用的 Options Api 有什么不同？](https://whyta.cn/post/582971d4aea1/)
 
 
@@ -86,15 +89,24 @@ Here are some ideas to get you started:
 
 - [JSX简介](https://github.com/ytking/ytking/blob/master/docs/%E3%80%8AReact%E3%80%8B%E7%AC%94%E8%AE%B0/01.%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/01.JSX%E7%AE%80%E4%BB%8B.md)
 - [Hook概述](https://github.com/ytking/ytking/blob/master/docs/%E3%80%8AReact%E3%80%8B%E7%AC%94%E8%AE%B0/03.Hook/01.Hook%E6%A6%82%E8%BF%B0.md)
+- [说说 Real DOM 和 Virtual DOM 的区别？优缺点？](https://whyta.cn/post/e4ee0da3ee75/)
+- [React事件绑定的方式有哪些？区别？](https://whyta.cn/post/af47571a2bb8/)
+- [React构建组件的方式有哪些？区别？](https://whyta.cn/post/15b3e8abcf8f/)
+- [说说你对高阶组件的理解？应用场景?](https://whyta.cn/post/8d761f218aa9/)
+- [说说React Jsx转换成真实DOM过程？](https://whyta.cn/post/cfa58acc4b57/)
 
 ## TypeScript
 
 - [基础类型](https://github.com/ytking/ytking/blob/master/docs/%E3%80%8ATypeScript%20%E4%BB%8E%E9%9B%B6%E5%AE%9E%E7%8E%B0%20axios%E3%80%8B/02.TypeScript%20%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/01.%E5%9F%BA%E7%A1%80%E7%B1%BB%E5%9E%8B.md)
 - [变量声明](https://github.com/ytking/ytking/blob/master/docs/%E3%80%8ATypeScript%20%E4%BB%8E%E9%9B%B6%E5%AE%9E%E7%8E%B0%20axios%E3%80%8B/02.TypeScript%20%E5%B8%B8%E7%94%A8%E8%AF%AD%E6%B3%95/02.%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E.md)
+- [说说你对 TypeScript 中高级类型的理解？有哪些？](https://whyta.cn/post/c50e09c115bc/)
+- [说说你对 TypeScript 中泛型的理解？应用场景？](https://whyta.cn/post/00912aee26cc/)
+- [说说你对 TypeScript 中接口的理解？应用场景？](https://whyta.cn/post/cd6f72b9b750/)
+- [说说你对 TypeScript 中类的理解？应用场景？](https://whyta.cn/post/d60ec134c3af/)
 
 ## 欢迎贡献
 
 项目需要大家的支持，期待更多小伙伴的贡献，你可以：
 
-- 在Issue上传优质面试题及解析
-- 提建议或 Bug：反馈平台
+- 在[Issue](https://github.com/ytking/ytking/issues)上传优质面试题及解析
+- 提建议或 Bug：[反馈平台](https://whyta.cn/link/)
