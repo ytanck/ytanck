@@ -61,7 +61,7 @@ Here are some ideas to get you started:
 ## 面试系列
 
 - [面试问题锦集](https://github.com/ytanck/ytanck/issues/35)
-- [20道大厂面试题](https://github.com/ytanck/ytanck/issues/37)
+- [20道大厂前端面试题](https://github.com/ytanck/ytanck/issues/37)
 - [大厂JS必考手写题](https://github.com/ytanck/ytanck/issues/38)
 - [JavaScript前端必刷面试题](https://github.com/ytanck/ytanck/issues/44)
 - [什么是进程？什么的线程？有什么区别](https://github.com/ytanck/ytanck/issues/23)
@@ -79,10 +79,12 @@ Here are some ideas to get you started:
 
 ## Vue系列
 
+- [Vue生命周期](https://github.com/ytanck/ytanck/issues/61)
+- [Vue组件之间的通信方式都有哪些？](https://github.com/ytanck/ytanck/issues/59)
 - [vue3有了解过吗？能说说跟vue2的区别吗？](https://whyta.cn/post/654de0797958/)
 - [Vue3.0的设计目标是什么？做了哪些优化](https://whyta.cn/post/c14f6be9a934/)
-- [Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？](https://whyta.cn/post/f72ec18dda36/)
-- [Vue3.0 所采用的 Composition Api 与 Vue2.x 使用的 Options Api 有什么不同？](https://whyta.cn/post/582971d4aea1/)
+- [Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？](https://github.com/ytanck/ytanck/issues/49)
+- [Vue3.0 所采用的 Composition Api 与 Vue2.x 使用的 Options Api 有什么不同？](https://github.com/ytanck/ytanck/issues/48)
 
 
 ## React系列
@@ -94,6 +96,8 @@ Here are some ideas to get you started:
 - [React构建组件的方式有哪些？区别？](https://whyta.cn/post/15b3e8abcf8f/)
 - [说说你对高阶组件的理解？应用场景?](https://whyta.cn/post/8d761f218aa9/)
 - [说说React Jsx转换成真实DOM过程？](https://whyta.cn/post/cfa58acc4b57/)
+- [React中组件之间如何通信？](https://github.com/ytanck/ytanck/issues/58)
+- [React生命周期的理解](https://github.com/ytanck/ytanck/issues/60)
 
 ## TypeScript
 
