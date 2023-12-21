@@ -97,7 +97,9 @@ Here are some ideas to get you started:
 - [说说你对高阶组件的理解？应用场景?](https://whyta.cn/post/8d761f218aa9/)
 - [说说React Jsx转换成真实DOM过程？](https://whyta.cn/post/cfa58acc4b57/)
 - [React中组件之间如何通信？](https://github.com/ytanck/ytanck/issues/58)
-- [React生命周期的理解](https://github.com/ytanck/ytanck/issues/60)
+- [React生命周期](https://github.com/ytanck/ytanck/issues/60)
+- [面试官：说说对React Hooks的理解？解决了什么问题？](https://github.com/ytanck/ytanck/issues/62)
+- [面试官：说说对React refs 的理解？应用场景？](https://github.com/ytanck/ytanck/issues/63)
 
 ## TypeScript
 
