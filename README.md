@@ -80,7 +80,14 @@ Here are some ideas to get you started:
 ## Vue系列
 
 - [Vue生命周期](https://github.com/ytanck/ytanck/issues/61)
-- [Vue组件之间的通信方式都有哪些？](https://github.com/ytanck/ytanck/issues/59)
+- [双向数据绑定v-model的原理？](https://github.com/ytanck/ytanck/issues/75)
+- [Vue组件之间的通信方式都有哪些？](https://github.com/ytanck/ytanck/issues/76)
+- [vue中data属性为什么是一个函数而不是一个对象？](https://github.com/ytanck/ytanck/issues/77)
+- [v-if和v-for的优先级是什么？](https://github.com/ytanck/ytanck/issues/78)
+- [说说你对keep-alive的理解是什么？](https://github.com/ytanck/ytanck/issues/79)
+- [Vue中的$nextTick有什么作用？](https://github.com/ytanck/ytanck/issues/80)
+- [说说你对vue的mixin的理解，有什么应用场景？ ](https://github.com/ytanck/ytanck/issues/81)
+- [v-show和v-if有什么区别？使用场景分别是什么？](https://github.com/ytanck/ytanck/issues/82)
 - [vue3有了解过吗？能说说跟vue2的区别吗？](https://whyta.cn/post/654de0797958/)
 - [Vue3.0的设计目标是什么？做了哪些优化](https://whyta.cn/post/c14f6be9a934/)
 - [Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？](https://github.com/ytanck/ytanck/issues/49)
@@ -91,6 +98,7 @@ Here are some ideas to get you started:
 
 - [JSX简介](https://github.com/ytanck/ytanck/blob/master/docs/%E3%80%8AReact%E3%80%8B%E7%AC%94%E8%AE%B0/01.%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/01.JSX%E7%AE%80%E4%BB%8B.md)
 - [Hook概述](https://github.com/ytanck/ytanck/blob/master/docs/%E3%80%8AReact%E3%80%8B%E7%AC%94%E8%AE%B0/03.Hook/01.Hook%E6%A6%82%E8%BF%B0.md)
+- [react中引入css的方式有哪几种？区别？](https://github.com/ytanck/ytanck/issues/59)
 - [说说 Real DOM 和 Virtual DOM 的区别？优缺点？](https://whyta.cn/post/e4ee0da3ee75/)
 - [React事件绑定的方式有哪些？区别？](https://whyta.cn/post/af47571a2bb8/)
 - [React构建组件的方式有哪些？区别？](https://whyta.cn/post/15b3e8abcf8f/)
@@ -98,6 +106,8 @@ Here are some ideas to get you started:
 - [说说React Jsx转换成真实DOM过程？](https://whyta.cn/post/cfa58acc4b57/)
 - [React中组件之间如何通信？](https://github.com/ytanck/ytanck/issues/58)
 - [React生命周期](https://github.com/ytanck/ytanck/issues/60)
+- [面试官：说说对高阶组件的理解？应用场景?](https://whyta.cn/post/8d761f218aa9/)
+- [面试官：说说React中对受控组件和非受控组件的理解？应用场景？](https://github.com/ytanck/ytanck/issues/57)
 - [面试官：说说对React Hooks的理解？解决了什么问题？](https://github.com/ytanck/ytanck/issues/62)
 - [面试官：说说对React refs 的理解？应用场景？](https://github.com/ytanck/ytanck/issues/63)
 
@@ -109,6 +119,9 @@ Here are some ideas to get you started:
 - [说说你对 TypeScript 中泛型的理解？应用场景？](https://whyta.cn/post/00912aee26cc/)
 - [说说你对 TypeScript 中接口的理解？应用场景？](https://whyta.cn/post/cd6f72b9b750/)
 - [说说你对 TypeScript 中类的理解？应用场景？](https://whyta.cn/post/d60ec134c3af/)
+
+## 算法
+
 
 ## 欢迎贡献
 
