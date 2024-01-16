@@ -92,6 +92,10 @@ Here are some ideas to get you started:
 - [Vue3.0的设计目标是什么？做了哪些优化](https://whyta.cn/post/c14f6be9a934/)
 - [Vue3.0里为什么要用 Proxy API 替代 defineProperty API ？](https://github.com/ytanck/ytanck/issues/49)
 - [Vue3.0 所采用的 Composition Api 与 Vue2.x 使用的 Options Api 有什么不同？](https://github.com/ytanck/ytanck/issues/48)
+- [什么是虚拟DOM？如何实现一个虚拟DOM？](https://github.com/ytanck/ytanck/issues/86)
+- [SSR解决了什么问题？有做过SSR吗？你是怎么做的？](https://github.com/ytanck/ytanck/issues/85)
+- [说说你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢](https://github.com/ytanck/ytanck/issues/84)
+- [什么是slot插槽？slot使用场景有哪些？](https://github.com/ytanck/ytanck/issues/83)
 
 
 ## React系列
@@ -121,7 +125,8 @@ Here are some ideas to get you started:
 - [说说你对 TypeScript 中类的理解？应用场景？](https://whyta.cn/post/d60ec134c3af/)
 
 ## 算法
-
+- [说说你对算法的理解？](https://github.com/ytanck/ytanck/issues/88)
+- [常用排序算法：插入排序、希尔排序、选择排序、冒泡排序、快速排序、归并排序](https://github.com/ytanck/ytanck/issues/87)
 
 ## 欢迎贡献
 
