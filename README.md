@@ -75,6 +75,9 @@ Here are some ideas to get you started:
 - [前端项目性能优化方案](https://github.com/ytanck/ytanck/issues/42)
 - [JS 前端常用工具函数](https://github.com/ytanck/ytanck/issues/43)
 - [面试官：说说地址栏输入 URL 敲下回车后发生了什么?](https://github.com/ytanck/ytanck/issues/45)
+- [常见面试智力题总结](https://github.com/ytanck/ytanck/issues/95)
+- [CSS 面试知识点总结](https://github.com/ytanck/ytanck/issues/94)
+- [HTML 面试知识点总结](https://github.com/ytanck/ytanck/issues/93)
 
 
 ## Vue系列
