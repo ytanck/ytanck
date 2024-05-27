@@ -77,7 +77,12 @@ Here are some ideas to get you started:
 - [面试官：说说地址栏输入 URL 敲下回车后发生了什么?](https://github.com/ytanck/ytanck/issues/45)
 - [常见面试智力题总结](https://github.com/ytanck/ytanck/issues/95)
 - [CSS 面试知识点总结](https://github.com/ytanck/ytanck/issues/94)
+- [css中，有哪些方式可以隐藏页面元素？](https://github.com/ytanck/ytanck/issues/107)
 - [HTML 面试知识点总结](https://github.com/ytanck/ytanck/issues/93)
+- [npm常用命令有哪些？](https://github.com/ytanck/ytanck/issues/104)
+- [Set、Map、WeakSet、WeakMap是什么?](https://github.com/ytanck/ytanck/issues/105)
+- [JS 中比较少用的运算符](https://github.com/ytanck/ytanck/issues/108)
+- [Javascript本地存储的方式有哪些？](https://github.com/ytanck/ytanck/issues/115)
 
 
 ## Vue系列
