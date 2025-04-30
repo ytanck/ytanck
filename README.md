@@ -83,6 +83,10 @@ Here are some ideas to get you started:
 - [Set、Map、WeakSet、WeakMap是什么?](https://github.com/ytanck/ytanck/issues/105)
 - [JS 中比较少用的运算符](https://github.com/ytanck/ytanck/issues/108)
 - [Javascript本地存储的方式有哪些？](https://github.com/ytanck/ytanck/issues/115)
+- [前端隔离：Proxy、Web Workers 与 iframe 的对比](https://github.com/ytanck/ytanck/issues/142)
+- [纯前端怎么实现检测版本更新](https://github.com/ytanck/ytanck/issues/137)
+- [你还不明白npm, yarn, pnpm之间的区别](https://github.com/ytanck/ytanck/issues/132)
+- [Monorepo与pnpm：前端项目管理的完美搭档](https://github.com/ytanck/ytanck/issues/131)
 
 
 ## Vue系列
@@ -104,6 +108,7 @@ Here are some ideas to get you started:
 - [SSR解决了什么问题？有做过SSR吗？你是怎么做的？](https://github.com/ytanck/ytanck/issues/85)
 - [说说你对SPA单页面的理解，它的优缺点分别是什么？如何实现SPA应用呢](https://github.com/ytanck/ytanck/issues/84)
 - [什么是slot插槽？slot使用场景有哪些？](https://github.com/ytanck/ytanck/issues/83)
+- [Vue的不同风格写法，你知道么？](https://github.com/ytanck/ytanck/issues/141)
 
 
 ## React系列
