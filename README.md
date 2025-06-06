@@ -87,6 +87,7 @@ Here are some ideas to get you started:
 - [纯前端怎么实现检测版本更新](https://github.com/ytanck/ytanck/issues/137)
 - [你还不明白npm, yarn, pnpm之间的区别](https://github.com/ytanck/ytanck/issues/132)
 - [Monorepo与pnpm：前端项目管理的完美搭档](https://github.com/ytanck/ytanck/issues/131)
+- [前端隔离：Proxy、Web Workers 与 iframe 的对比](https://github.com/ytanck/ytanck/issues/142)
 
 
 ## Vue系列
